@@ -1,0 +1,81 @@
+#stat-container{
+   max-width: 425px;
+}
+.doughnut-chart{
+    width: 350px;
+     height: 300px;
+}
+.statics__transiction-container {
+    margin-top: 6rem;
+    max-width: 85%;
+    margin: 6rem auto;
+}
+
+.statics__Transiction-history{
+        display: flex;
+        gap:0 211px;
+        justify-content: start;
+}
+
+.statics__Transiction-history :nth-child(1) {
+    font-weight: 500;
+}
+
+.statics__Transiction-history :nth-child(2) {
+    color: rgb(117, 117, 117);
+}
+
+.statics__transiction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #ebf5ff;
+    padding: 5px 10px 5px 5px;
+    border-radius: 10px;
+}
+
+.statics__left-side {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.statics__left-side div :nth-child(1) {
+    font-weight: 500;
+}
+
+.statics__left-side div :nth-child(2) {
+
+    color: rgb(117, 117, 117);
+    font-size: 12px;
+}
+
+@media (min-width:375px) and (max-width:424px){
+   
+    .statics__Transiction-history{
+        gap:0 170px;
+}
+    button {
+        width: 15%;
+    }
+    .doughnut-chart{
+        width: 325px;
+         height: 250px;
+         margin: 0 auto;
+    }
+}
+@media (min-width:319px) and (max-width:375px){
+   
+    .statics__Transiction-history{
+        gap:0 124px;
+}
+    button {
+        width: 14.3%;
+    }
+    .doughnut-chart{
+        width: 325px;
+         height: 250px;
+         margin: 0 auto;
+    }
+}

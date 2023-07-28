@@ -1,0 +1,141 @@
+.user__profile__container{
+    max-width: 425px;
+}
+
+.user__profile__top {
+    background-image: url(../../Images/userBackground.svg);
+
+    height: 200px;
+    position: relative;
+}
+
+.user__profile__container__charge {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 17rem;
+    padding-top: 0.5rem;
+
+}
+
+.user__profile__container__charge p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+.user__profile__container__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 7rem;
+    line-height: 1rem;
+    color: #fff;
+    margin-top: 3rem;
+    font-size: 24px;
+}
+
+.user__profile__container__name div {
+    margin-top: 0.7rem;
+    line-height: 2rem;
+}
+
+
+.user_img_div{
+    position: absolute;
+
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.userImg {
+padding-top: 1.2rem;
+}
+
+.userName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.menu__container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 2.2rem;
+    margin-top: 2rem;
+}
+
+.menu__container_diamond {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+    border-bottom: solid 1px #b8b8b8;
+    max-width: 85%;
+    padding-bottom: 1rem;
+}
+
+.menu__container_diamond p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.menu__container p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.menu__container_last {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 2.2rem;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+}
+
+.menu__container_last p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+@media (min-width :375px) and (max-width:425px) {
+
+    .user__profile__container__name {
+        gap: 6rem;
+ 
+    }
+   
+    .user__profile__container__charge {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 12.5rem;
+      
+    } 
+ 
+}
+
+@media (min-width :318px) and (max-width:374px) {
+
+    .user__profile__container__name {
+        gap: 4rem;
+        font-size: 20px;
+    }
+    
+    .user__profile__container__charge {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10.5rem;
+      
+    } 
+   
+ 
+}

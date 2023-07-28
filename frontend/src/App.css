@@ -1,0 +1,19 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Poppins', sans-serif;
+}
+/* Main Colors */
+:root {
+  --primaryblue:#58A9F5;
+  --Secondaryblue: #0C79DD;
+  --linearblue:background: linear-gradient(180deg, #5DAEFA -17.19%, #0071D9 123.44%);
+  --green:#25A969;
+  --red:#F95B51;
+  --white: #ffffff;
+  --black:#000000;
+
+}

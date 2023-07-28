@@ -1,0 +1,80 @@
+.navbar-container{
+    background-color: rgb(255, 255, 255);
+    padding: 0.7rem 0 0.7rem 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+}
+.navbar{
+    background-color: #ffffff !important;
+    padding: 1.2rem 0 1.2rem 0;
+    max-width: 425px;
+    
+}
+.plus{
+    position: absolute;
+    left: 9rem;
+    bottom: 0.1rem;
+    width:130px;
+}
+.chart{
+    margin-right:2rem;
+    
+}
+.home{
+    margin-left: 1rem;
+}
+
+.wallet{
+    margin-left: 2rem;
+}
+.user{
+    margin-right: 1rem;
+}
+
+@media (min-width :375px) and (max-width:425px) {
+
+    .plus{
+    left: 34%;
+    width: 33%;
+    }
+    .chart{
+        
+        width: 45%;
+    }
+    .home{
+        width: 55%;
+    }
+    
+    .wallet{
+        width: 45%;
+    }
+    .user{
+        width: 55%;
+    }
+
+}
+@media (min-width :319px) and (max-width:374px) {
+
+    .plus{
+    left: 33%;
+    width: 33%;
+    }
+    .chart{
+        
+        width: 45%;
+    }
+    .home{
+        width: 55%;
+    }
+    
+    .wallet{
+        width: 45%;
+    }
+    .user{
+        width: 55%;
+    }
+}

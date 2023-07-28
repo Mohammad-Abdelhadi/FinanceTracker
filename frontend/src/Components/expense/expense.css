@@ -1,0 +1,69 @@
+#expense__container{
+    max-width: 425px;
+}
+
+#expense__page {
+    background-image: url('../../Images/Background.svg');
+    background-size: cover;
+    height: 287px;
+    position: relative;
+  
+}
+
+#mobile__icon {
+    margin-left: 1.9rem;
+}
+
+
+.text__edit {
+    text-decoration: none;
+    color: white;
+}
+
+.center__cards {
+    width: 80%;
+    top: 50%;
+    right: 10%;
+    background-color: #fff;
+    box-shadow: 0px 22px 35px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+ 
+
+}
+
+.add__btn {
+    margin-top: 10px;
+    width: 78%;
+    height: 55px;
+    top: 33rem;
+    left: 11%;
+    border-radius: 40px;
+    background: linear-gradient(180deg, #5DAEFA -17.19%, #0071D9 123.44%);
+    box-shadow: 0px 7px 20px #55adff;
+    position: absolute;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+
+ 
+
+}
+.green-input {
+    color: green;
+  }
+  
+  .red-input {
+    color: red;
+  }
+
+.add__btn button {
+    color: #fff;
+    margin-bottom: 150px;
+   border:none
+}
+
+.center__battery {
+    width: 95%;
+    margin: 0 auto;
+}

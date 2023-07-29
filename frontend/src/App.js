@@ -12,7 +12,7 @@ import Wallet from "./Components/Wallet/Wallet";
 import Expense from "./Components/expense/expense";
 import Navbar from "./Components/Navbar/Navbar";
 import UserProfile from "./Components/UserProfile/UserProfile";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./Components/expense/config/firebase";
 
@@ -33,10 +33,10 @@ function App() {
    //    setCategoriesList(filterData);
    // };
    // useEffect(() => {
-   //   getCategoriesList();
-   //   console.log(categoriesList)
+   //    getCategoriesList();
+   //    console.log(categoriesList);
    // }, []);
-   // Check if the current route is the selected pages
+   // // Check if the current route is the selected pages
    // const isSplashPage =
    //    location.pathname === "/" ||
    //    location.pathname === "/onboarding" ||

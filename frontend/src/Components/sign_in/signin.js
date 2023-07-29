@@ -7,6 +7,19 @@ import google from "../../Images/google.png";
 import "./signin.css";
 
 const Signin = () => {
+
+  const [email, setEmail]=useState('')
+  const[password, setPassword] = useState("")
+
+
+  const handleSubmit = () => {
+    localStorage.setItem("index", index);
+  };
+
+
+
+
+  // -------------------------------------------------------------------------------
   const [isMatchEmail, setIsMatchEmail] = useState(false);
   const [isMatchPass, setIsMatchPass] = useState(false);
   const [index, setIndex] = useState(-1);
@@ -46,9 +59,7 @@ const Signin = () => {
     }
   };
 
-  const onClick = () => {
-    localStorage.setItem("index", index);
-  };
+  
 
   const isInputEmpty = !isMatchEmail || !isMatchPass;
   return (
@@ -63,17 +74,20 @@ const Signin = () => {
             <h1>Sign in</h1>
           </div>
           <div className="signin-inputs-div">
+            {/* <form  onSubmit={andleSubmit}> */}
             <input
               type="text"
               placeholder="Email or Username"
-              onChange={onChangeEmail}
+              onChange={setEmail}
+              value={email}
             />
           </div>
           <div>
             <input
               type="password"
               placeholder="Password"
-              onChange={onChangePass}
+              onChange={setPassword}
+              value={password}
             />
           </div>
           {isInputEmpty && (isMatchEmail || isMatchPass) && (
@@ -84,6 +98,7 @@ const Signin = () => {
               Not Match Email Or Wrong Password
             </label>
           )}
+          
 
           <div className="forgot_pas">Forgot password?</div>
           <div className="have-account">
@@ -98,10 +113,11 @@ const Signin = () => {
             type="button"
             className="btn btn-primary btn_sign_in"
             disabled={!(isMatchEmail && isMatchPass)}
-            onClick={onClick}
+            onClick={handleSubmit}
           >
-            <Link to="/HomePage">Sign In</Link>
+            {/* <Link to="/HomePage">Sign In</Link> */}
           </button>
+          {/* </form> */}
         </div>
         <div className="signin-continue_with mt-1">or continue with</div>
         <div className="d-flex justify-content-center gap-3 my-4">

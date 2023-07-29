@@ -6,10 +6,45 @@ import { Link } from "react-router-dom";
 import "./signup.css";
 import { useState } from "react";
 import logo from "../../Images/logo.png";
+import useSignup from "../../hooks/useSignup";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [pass, setpass] = useState("");
-  const [userName, setuserName] = useState("");
+  const [username, setUsername] = useState("");
+
+const {signup, isLoading, error}= useSignup()
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  await signup(username, email, pass)
+  
+  let Email;
+  let Pass;
+  let name;
+
+  if (localStorage.getItem("gmail") == null) {
+    Email = [];
+    Pass = [];
+    name = [];
+  } else {
+    Email = JSON.parse(localStorage.getItem("gmail"));
+    Pass = JSON.parse(localStorage.getItem("Pass"));
+    name = JSON.parse(localStorage.getItem("user name"));
+  }
+  Pass.push(pass);
+  name.push(username);
+  Email.push(email);
+
+  localStorage.setItem("gmail", JSON.stringify(Email));
+  localStorage.setItem("Pass", JSON.stringify(Pass));
+  localStorage.setItem("user name", JSON.stringify(name));
+};
+
+
+
+  // -------------------------------------------------------------------------
+
   const [con_pass, setcon_pass] = useState("");
   const [isValid, setIsValid] = useState();
   const [isValidPass, setIsValidPass] = useState();
@@ -38,32 +73,10 @@ const Signup = () => {
     setIsValidcon_Pass(pass === e.target.value);
   };
   const handleChange_user_name = (e) => {
-    setuserName(e.target.value);
+    setUsername(e.target.value);
   };
 
-  const onClick = (e) => {
-    e.preventDefault();
-    let Email;
-    let Pass;
-    let name;
-
-    if (localStorage.getItem("gmail") == null) {
-      Email = [];
-      Pass = [];
-      name = [];
-    } else {
-      Email = JSON.parse(localStorage.getItem("gmail"));
-      Pass = JSON.parse(localStorage.getItem("Pass"));
-      name = JSON.parse(localStorage.getItem("user name"));
-    }
-    Pass.push(pass);
-    name.push(userName);
-    Email.push(email);
-
-    localStorage.setItem("gmail", JSON.stringify(Email));
-    localStorage.setItem("Pass", JSON.stringify(Pass));
-    localStorage.setItem("user name", JSON.stringify(name));
-  };
+  
 
 
 
@@ -77,8 +90,9 @@ const Signup = () => {
         <div className="d-flex  flex-column align-items-center  input_up">
           <div className="sign_up ">
             <h1>Sign up</h1>
+            {error && <div> {error} </div>}
           </div>
-          <form className="ms-5">
+          <form className="ms-5"  onSubmit={handleSubmit}>
             <div className="mb-3 ">
               <input
                 type="email"
@@ -167,9 +181,9 @@ const Signup = () => {
                 type="submit"
                 className="btn btn-primary  py-3 btn_Register "
                 disabled={!(isValid && isValidPass && isValidcon_Pass)}
-                onClick={onClick}
+               
               >
-                <Link to="/signin">Sign up</Link>
+              Sign up
               </button>
             </div>
           </form>

@@ -65,9 +65,7 @@ const Signup = () => {
     localStorage.setItem("user name", JSON.stringify(name));
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <>

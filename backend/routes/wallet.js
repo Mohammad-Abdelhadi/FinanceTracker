@@ -4,15 +4,15 @@ const { requireAuth } = require("../middleware/requireAuth");
 const router = express.Router();
 
 const {
-   getTransactions,
+   getWallet,
    addTransaction,
-} = require("../controllers/transactionController");
+} = require("../controllers/walletController");
 
 // middleware
 router.use(requireAuth);
 
 // Return all transactions
-router.get("/", getTransactions);
+router.get("/", getWallet);
 
 // post income & expense
 router.post("/add", addTransaction);

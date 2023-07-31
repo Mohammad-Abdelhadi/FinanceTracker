@@ -6,9 +6,11 @@ const getWallet = async (req, res) => {
    const { _id } = req.user;
 
    try {
-      const wallet = await Wallet.findOne({ userId: _id.toString() });
+      const { balance, income, expense, transactions } = await Wallet.findOne({
+         userId: _id.toString(),
+      });
 
-      res.status(200).json({ wallet });
+      res.status(200).json({ balance, income, expense, transactions });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }

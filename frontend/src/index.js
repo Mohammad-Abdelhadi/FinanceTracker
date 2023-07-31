@@ -4,16 +4,19 @@ import "./index.css";
 import App from "./App";
 import { AuthContextProvider } from "./context/AuthContext";
 import { BrowserRouter } from "react-router-dom";
+import { WalletContextProvider } from "./context/WalletContext";
 // import Home from "./Components/Home"
 // import Signup from './Components/Signup';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
    <React.StrictMode>
-      <BrowserRouter>
-         <AuthContextProvider>
-            <App />
-         </AuthContextProvider>
-      </BrowserRouter>
+      <WalletContextProvider>
+         <BrowserRouter>
+            <AuthContextProvider>
+               <App />
+            </AuthContextProvider>
+         </BrowserRouter>
+      </WalletContextProvider>
    </React.StrictMode>
 );
 

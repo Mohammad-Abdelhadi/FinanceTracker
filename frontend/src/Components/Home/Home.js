@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import topBackground from "./Home.css";
 import "./Home.css";
 import ring from "../../Images/ring.svg";
@@ -9,54 +9,32 @@ import incomeArrow from "../../Images/incomeArrow.svg";
 import expensesArrow from "../../Images/expensesArrow.svg";
 // import from firebase to get data
 import Dollar from "../../Images/dollar-coin-svgrepo-com.svg";
-import { AppContext } from "../../App";
+import { useWalletContext } from "../../hooks/useWalletContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Home = () => {
-   // get the sum of income and expenses.
+   const { wallet, dispatch } = useWalletContext();
+   const { user } = useAuthContext();
 
-   // const [sumIncome, setSumIncome] = useState(0);
-   // const [sumExpense, setSumExpense] = useState(0);
-   // defualt balance is 0 , and its changes depend in the income - outcome
-   // const  {balance}  = {balance: 0}  ;
-   // const totalBalance = sumExpense + sumIncome;
+   useEffect(() => {
+      const fetchWallet = async () => {
+         const responce = await fetch("/api/wallet", {
+            headers: {
+               Authorization: `Bearer ${user.token}`,
+            },
+         });
 
-   // let index = localStorage.getItem("index");
-   // let name = JSON.parse(localStorage.getItem("user name"));
-   // let user_name = name[index];
+         const json = await responce.json();
 
-   // const [categoriesList, setCategoriesList] = useState([]);
-   // const expenseCollectionRef = collection(db, "expenses");
+         if (responce.ok) {
+            dispatch({ type: "SET_WALLET", payload: json });
+         }
+      };
 
-   // const getCategoriesList = async () => {
-   //   const data = await getDocs(expenseCollectionRef);
-   //   const filterData = data.docs.map((doc) => ({
-   //     ...doc.data(),
-   //     id: doc.id,
-   //   }));
-   //   setCategoriesList(filterData);
-   // };
-
-   // const { categoriesList, getCategoriesList } = useContext(AppContext);
-
-   // useEffect(() => {
-   //    let tempSumIncome = 0;
-   //    let tempSumExpense = 0;
-   //    categoriesList.forEach((card) => {
-   //       if (card.expense > 0) {
-   //          tempSumIncome += card.expense;
-   //       } else {
-   //          tempSumExpense += card.expense;
-   //       }
-   //    });
-   //    setSumIncome(tempSumIncome);
-   //    setSumExpense(tempSumExpense);
-   //    window.scrollTo(0, 0);
-   //    console.log("first1");
-   // }, [categoriesList]);
-   // useEffect(() => {
-   //    getCategoriesList();
-   //    console.log("first2");
-   // }, []);
+      if (user) {
+         fetchWallet();
+      }
+   }, [dispatch, user]);
 
    return (
       <>
@@ -78,7 +56,7 @@ const Home = () => {
                   <div className="name-container">
                      <div>
                         <p>Welcome</p>
-                        <p>Alaa</p>
+                        <p>{user.username}</p>
                      </div>
                      <img src={ring} alt="" />
                   </div>
@@ -94,7 +72,9 @@ const Home = () => {
                            <img src={dots} alt="" />
                         </div>
                      </div>
-                     <p className="balance">10</p>
+                     <p className="balance">
+                        ${wallet === null ? 0 : wallet.balance.toFixed(1)}
+                     </p>
                      <div className="expense-container">
                         <div className="income">
                            <img src={incomeArrow} alt="" />
@@ -107,10 +87,14 @@ const Home = () => {
                      </div>
                      <div className="expenses-values">
                         <div className="income-value">
-                           <p>500</p>
+                           <p>
+                              ${wallet === null ? 0 : wallet.income.toFixed(1)}
+                           </p>
                         </div>
                         <div className="expense-value">
-                           <p>200</p>
+                           <p>
+                              ${wallet === null ? 0 : wallet.expense.toFixed(1)}
+                           </p>
                         </div>
                      </div>
                   </div>
@@ -121,20 +105,34 @@ const Home = () => {
                   <p>Transiction history</p>
                   <p>see all</p>
                </div>
-               <div className="transiction__homepage">
-                  <div className="home__left-side">
-                     <div>
-                        <img src={Dollar} alt="" />
-                     </div>
-                     <div>
-                        <p>Sallary</p>
-                        <p>15/8</p>
-                     </div>
-                  </div>
-                  <div>
-                     <p style={{ color: "green" }}>10000</p>
-                  </div>
-               </div>
+               {wallet !== null &&
+                  wallet.transactions.map((transaction, i) => {
+                     return (
+                        <div className="transiction__homepage" key={i}>
+                           <div className="home__left-side">
+                              <div>
+                                 <img src={Dollar} alt="" />
+                              </div>
+                              <div>
+                                 <p>{transaction.category}</p>
+                                 <p>{transaction.date}</p>
+                              </div>
+                           </div>
+                           <div>
+                              <p
+                                 style={{
+                                    color:
+                                       transaction.type === "income"
+                                          ? "green"
+                                          : "red",
+                                 }}
+                              >
+                                 ${(transaction.value * 1).toFixed(2)}
+                              </p>
+                           </div>
+                        </div>
+                     );
+                  })}
             </div>
          </div>
       </>

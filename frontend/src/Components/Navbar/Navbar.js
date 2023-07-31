@@ -28,7 +28,7 @@ const Navbar = () => {
             </Link>
          </Nav.Item>
          <Nav.Item>
-            <Link to="/statistic" eventKey="statistic">
+            <Link to="/statistic" eventkey="statistic">
                <img src={chart} alt="" className="chart" />
             </Link>
          </Nav.Item>
@@ -38,12 +38,12 @@ const Navbar = () => {
          </Link>
 
          <Nav.Item>
-            <Link to="Wallet" eventKey="Wallet">
+            <Link to="Wallet" eventkey="Wallet">
                <img src={wallet} alt="" className="wallet" />
             </Link>
          </Nav.Item>
          <Nav.Item>
-            <Link to="UserProfile" eventKey="UserProfile">
+            <Link to="UserProfile" eventkey="UserProfile">
                <img src={user} alt="" className="user" />
             </Link>
          </Nav.Item>

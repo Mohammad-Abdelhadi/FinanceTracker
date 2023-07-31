@@ -14,15 +14,15 @@ import { AppContext } from "../../App";
 const Home = () => {
    // get the sum of income and expenses.
 
-   const [sumIncome, setSumIncome] = useState(0);
-   const [sumExpense, setSumExpense] = useState(0);
+   // const [sumIncome, setSumIncome] = useState(0);
+   // const [sumExpense, setSumExpense] = useState(0);
    // defualt balance is 0 , and its changes depend in the income - outcome
    // const  {balance}  = {balance: 0}  ;
-   const totalBalance = sumExpense + sumIncome;
+   // const totalBalance = sumExpense + sumIncome;
 
-   let index = localStorage.getItem("index");
-   let name = JSON.parse(localStorage.getItem("user name"));
-   let user_name = name[index];
+   // let index = localStorage.getItem("index");
+   // let name = JSON.parse(localStorage.getItem("user name"));
+   // let user_name = name[index];
 
    // const [categoriesList, setCategoriesList] = useState([]);
    // const expenseCollectionRef = collection(db, "expenses");
@@ -36,27 +36,27 @@ const Home = () => {
    //   setCategoriesList(filterData);
    // };
 
-   const { categoriesList, getCategoriesList } = useContext(AppContext);
+   // const { categoriesList, getCategoriesList } = useContext(AppContext);
 
-   useEffect(() => {
-      let tempSumIncome = 0;
-      let tempSumExpense = 0;
-      categoriesList.forEach((card) => {
-         if (card.expense > 0) {
-            tempSumIncome += card.expense;
-         } else {
-            tempSumExpense += card.expense;
-         }
-      });
-      setSumIncome(tempSumIncome);
-      setSumExpense(tempSumExpense);
-      window.scrollTo(0, 0);
-      console.log("first1");
-   }, [categoriesList]);
-   useEffect(() => {
-      getCategoriesList();
-      console.log("first2");
-   }, []);
+   // useEffect(() => {
+   //    let tempSumIncome = 0;
+   //    let tempSumExpense = 0;
+   //    categoriesList.forEach((card) => {
+   //       if (card.expense > 0) {
+   //          tempSumIncome += card.expense;
+   //       } else {
+   //          tempSumExpense += card.expense;
+   //       }
+   //    });
+   //    setSumIncome(tempSumIncome);
+   //    setSumExpense(tempSumExpense);
+   //    window.scrollTo(0, 0);
+   //    console.log("first1");
+   // }, [categoriesList]);
+   // useEffect(() => {
+   //    getCategoriesList();
+   //    console.log("first2");
+   // }, []);
 
    return (
       <>
@@ -78,7 +78,7 @@ const Home = () => {
                   <div className="name-container">
                      <div>
                         <p>Welcome</p>
-                        <p>{user_name}</p>
+                        <p>Alaa</p>
                      </div>
                      <img src={ring} alt="" />
                   </div>
@@ -94,7 +94,7 @@ const Home = () => {
                            <img src={dots} alt="" />
                         </div>
                      </div>
-                     <p className="balance">${totalBalance}</p>
+                     <p className="balance">10</p>
                      <div className="expense-container">
                         <div className="income">
                            <img src={incomeArrow} alt="" />
@@ -107,10 +107,10 @@ const Home = () => {
                      </div>
                      <div className="expenses-values">
                         <div className="income-value">
-                           <p>${sumIncome.toFixed(2)}</p>
+                           <p>500</p>
                         </div>
                         <div className="expense-value">
-                           <p>${Math.abs(sumExpense).toFixed(2)}</p>
+                           <p>200</p>
                         </div>
                      </div>
                   </div>
@@ -121,35 +121,20 @@ const Home = () => {
                   <p>Transiction history</p>
                   <p>see all</p>
                </div>
-               {categoriesList
-                  .sort((a, b) => new Date(b.date) - new Date(a.date))
-                  .map((value) => {
-                     const isIncome = value.expense > 0;
-                     const formattedExpense = isIncome ? "+" : "-";
-                     const expenseValue = isIncome
-                        ? value.expense
-                        : Math.abs(value.expense);
-                     const amountColor = isIncome ? "green" : "red";
-                     return (
-                        <div className="transiction__homepage" key={value.id}>
-                           <div className="home__left-side">
-                              <div>
-                                 <img src={Dollar} alt="" />
-                              </div>
-                              <div>
-                                 <p>{value.categories}</p>
-                                 <p>{value.date}</p>
-                              </div>
-                           </div>
-                           <div>
-                              <p style={{ color: amountColor }}>
-                                 {formattedExpense}${expenseValue.toFixed(2)}
-                                 {/* {formattedExpense}${expenseValue.toFixed(2)} */}
-                              </p>
-                           </div>
-                        </div>
-                     );
-                  })}
+               <div className="transiction__homepage">
+                  <div className="home__left-side">
+                     <div>
+                        <img src={Dollar} alt="" />
+                     </div>
+                     <div>
+                        <p>Sallary</p>
+                        <p>15/8</p>
+                     </div>
+                  </div>
+                  <div>
+                     <p style={{ color: "green" }}>10000</p>
+                  </div>
+               </div>
             </div>
          </div>
       </>

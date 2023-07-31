@@ -1,4 +1,5 @@
 const User = require("../models/userModel");
+const Transaction = require("../models/transactionModel");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {
@@ -30,7 +31,9 @@ const signupUser = async (req, res) => {
       // create token
       const token = createToken(user._id);
 
-      res.status(200).json({ email, token });
+      const transaction = await Transaction.createDefaultTransaction(user._id);
+
+      res.status(200).json({ email, token, transaction });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }

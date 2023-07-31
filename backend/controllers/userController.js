@@ -1,4 +1,5 @@
 const User = require("../models/userModel");
+const Wallet = require("../models/walletModel");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {
@@ -30,10 +31,12 @@ const signupUser = async (req, res) => {
     // create token
     const token = createToken(user._id);
 
-    res.status(200).json({ email, token });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+      const wallet = await Wallet.createDefaultWallet(user._id);
+
+      res.status(200).json({ email, token, wallet });
+   } catch (error) {
+      res.status(400).json({ error: error.message });
+   }
 };
 
 module.exports = {

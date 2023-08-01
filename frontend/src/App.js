@@ -14,6 +14,9 @@ import Navbar from "./Components/Navbar/Navbar";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import { createContext } from "react";
 import { useAuthContext } from "./hooks/useAuthContext";
+import CreatePassword from "./resetPassword/CreatePassword";
+import EmailConfirm from "./resetPassword/EmailConfirm";
+import ResetPassword from "./resetPassword/ResetPassword";
 
 export const AppContext = createContext();
 function App() {
@@ -62,6 +65,21 @@ function App() {
             <Route
                path="/UserProfile"
                element={user ? <UserProfile /> : <Navigate to="/onboarding" />}
+            />
+               <Route
+                  path="/resetpassword"
+                  // element={user ? <ResetPassword /> : <Navigate to="/onboarding" />}
+                  element={<ResetPassword  />}
+               />
+               <Route
+                  path="/emailconfirm"
+                  // element={user ? <EmailConfirm /> : <Navigate to="/onboarding" />}
+                  element={<EmailConfirm />}
+               />
+            <Route
+               path="/createpassword"
+               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+               element={<CreatePassword   />}
             />
          </Routes>
          {!isSplashPage && <Navbar />}

@@ -12,8 +12,8 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-   console.log(req.path, req.url);
-   next();
+  console.log(req.path, req.url);
+  next();
 });
 
 //Routes
@@ -22,8 +22,8 @@ app.use("/api/wallet", walletRoutes);
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI).then(() => {
-   //listen for requests
-   app.listen(process.env.PORT, () => {
-      console.log("Connect to db & listen to port", process.env.PORT);
-   });
+  //listen for requests
+  app.listen(process.env.PORT, () => {
+    console.log("Connect to db & listen to port", process.env.PORT);
+  });
 });

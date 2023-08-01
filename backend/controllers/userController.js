@@ -3,7 +3,7 @@ const Wallet = require("../models/walletModel");
 const jwt = require("jsonwebtoken");
 
 const createToken = (_id) => {
-   return jwt.sign({ _id }, process.env.SECRET);
+   return jwt.sign({ _id }, process.env.SECRET, {expiresIn:"3d"});
 };
 
 //login
@@ -33,7 +33,7 @@ const signupUser = async (req, res) => {
 
       const wallet = await Wallet.createDefaultWallet(user._id);
 
-      res.status(200).json({ username, email, token, wallet });
+      res.status(200).json({ username, email, token });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }

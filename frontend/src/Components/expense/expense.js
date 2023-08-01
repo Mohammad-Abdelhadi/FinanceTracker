@@ -59,7 +59,7 @@ const Expense = () => {
          if (type === "income") {
             wallet.income = wallet.income + parseInt(value);
          } else if (type === "expense") {
-            wallet.expense += +value;
+            wallet.expense += parseInt(value);
          }
          wallet.balance = parseInt(wallet.income) - parseInt(wallet.expence);
          console.log(wallet.balance);

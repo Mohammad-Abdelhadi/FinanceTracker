@@ -23,6 +23,7 @@
     .log_in{
         color: #509fea;
         cursor: pointer;
+        text-decoration: none;
     }
     .onboarding-container{
         background-image: url(../../Images/onboardingback.svg);
@@ -34,6 +35,10 @@
      margin-top: 2rem ; 
       width: 50%;
     }
+    .sign__in__link{
+        text-decoration: none;
+    }
+
     @media (min-width :375px) and (max-width:424px){
    
         .text{

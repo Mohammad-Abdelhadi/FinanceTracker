@@ -96,7 +96,7 @@ const Signin = () => {
                         Not Match Email Or Wrong Password
                      </label>
                   )}
-
+                  <div className="singin_error__div">** please enter your email</div>
                   <div className="forgot_pas">Forgot password?</div>
                   <div className="have-account">
                      If you don't have an account
@@ -106,7 +106,9 @@ const Signin = () => {
                   </div>
                </div>
                <div>
-                  {error && <div>{error}</div>}
+                  {/* {error && <div>{error}</div>} */}
+                  
+                 
                   <button type="submit" className="btn btn-primary btn_sign_in">
                      {/* to do remove css style from link to button */}
                      {/* <Link>Sign In</Link> */}

@@ -93,11 +93,10 @@ const handleSubmit = async (e) => {
             {error && <div> {error} </div>}
           </div>
           <form className="ms-5"  onSubmit={handleSubmit}>
-            <div className="mb-3 ">
+            <div className=" ">
               <input
                 type="email"
-                className="form-control"
-                id="exampleInputEmail1"
+                className="custom_input"
                 placeholder=" Email address"
                 onChange={handleChange}
                 required
@@ -115,36 +114,25 @@ const handleSubmit = async (e) => {
                   : "Please enter the valid email format (e.g.example@email.com)"}
               </label>
             </div>
-            <div className="mb-3">
+            <div className="">
               <input
                 type="text"
-                className="form-control"
-                id="exampleInputText"
+                className="custom_input"
                 placeholder="User Name"
                 onChange={handleChange_user_name}
                 required
               />
             </div>
             <label></label>
-            <div className="input-group mb-3">
+            <div className="input-group">
               <input
                 type={passwordType}
-                className="form-control"
-                aria-label="Text input with checkbox"
+                className="custom_input"
                 placeholder="Password"
                 onChange={handleChange_pass}
                 required
               />
-              <div className="input-group-text">
-                <input
-                  className="form-check-input mt-0"
-                  type="checkbox"
-                  value=""
-                  aria-label="Checkbox for following text input"
-                  onChange={togglePassword}
-                />
               </div>
-            </div>
             <label
               style={{ color: isValidPass ? "green" : "red", width: "250px" }}
             >
@@ -154,11 +142,10 @@ const handleSubmit = async (e) => {
                 ? ""
                 : "Your password must have 8+ characters, a number, a capital letter and a special character."}{" "}
             </label>
-            <div className="input-group mb-3">
+            <div className="input-group">
               <input
                 type={passwordType}
-                className="form-control"
-                aria-label="Text input with checkbox"
+                className="custom_input"
                 placeholder="Confirm Password"
                 onChange={handleChange_con_pass}
                 required
@@ -176,10 +163,12 @@ const handleSubmit = async (e) => {
                 ? ""
                 : "Those passwords didn't match. Try again"}
             </label>
+            {/* {error && <div className="error__div">{error}</div>} */}
+            <div className="error__div">please enter your email</div>
             <div className="btn__div">
               <button
                 type="submit"
-                className="btn btn-primary  py-3 btn_Register "
+                className="btn btn-primary btn_Register "
                 disabled={!(isValid && isValidPass && isValidcon_Pass)}
                
               >
@@ -188,12 +177,12 @@ const handleSubmit = async (e) => {
             </div>
           </form>
         </div>
-        <div className="continue_with mt-3">or continue with</div>
+        {/* <div className="continue_with mt-3">or continue with</div>
         <div className="d-flex justify-content-center gap-3 my-3">
           <img src={facebook} width="10%" alt="" />
           <img src={apple} width="10%" alt="" />
           <img src={google} width="10%" alt="" />
-        </div>
+        </div> */}
       </div>
     </>
   );

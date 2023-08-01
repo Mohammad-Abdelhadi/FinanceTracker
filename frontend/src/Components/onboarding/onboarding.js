@@ -31,9 +31,9 @@ const Onboarding = () => {
                Get Started
             </Link>
             <div className="mb-4  have_account">
-               Already Have Account?
-               <Link to="/signin">
-                  <span className="">Log In</span>
+               Already Have Account ?
+               <Link to="/signin" className="sign__in__link">
+                  <span> sign in</span>
                </Link>
             </div>
          </div>

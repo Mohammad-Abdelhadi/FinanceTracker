@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.EmailConfirm__createPasswordcontainer {
+  max-width: 425px;
+  /* margin: 43px 0px 0 50px; */
+  padding: 30px 40px;
+}
+.EmailConfirm__backcontainer {
+  display: flex;
+  gap: 1rem;
+}
+.EmailConfirm__backcontainer img {
+  width: 8px;
+}
+.EmailConfirm__backcontainer div {
+  width: 8px;
+  font-weight: 600;
+}
+.EmailConfirm__createPasswordtextcontainer {
+  margin-top: 2rem;
+}
+.EmailConfirm__createPasswordtextcontainer :nth-child(1) {
+  font-weight: 600;
+  font-size: 24px;
+}
+.EmailConfirm__createPasswordtextcontainer :nth-child(2) {
+  font-weight: 300;
+  font-size: 12px;
+  max-width: 80%;
+  margin-top: 0.5rem;
+}
+.EmailConfirm__inputscontainer {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.EmailConfirm__newpassword input {
+  width: 80%;
+  height: 3rem;
+  background-color: #f2f9ff;
+  color: #65b2fa;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  border: none;
+}
+.EmailConfirm__createPasswordbtn__container {
+  display: flex;
+  justify-content: center;
+}
+.EmailConfirm__createPasswordbtn__container button {
+  width: 80%;
+  height: 3.5rem;
+  background: linear-gradient(180deg, #5daefa -17.19%, #0071d9 123.44%);
+  box-shadow: 0px 4px 20px #6bb7ff;
+  display: grid;
+  place-items: center;
+  border-radius: 40px;
+  color: #fff;
+  margin-top: 3rem;
+  border: none;
+}
+.EmailConfirm__newpassword input:focus {
+  outline: none;
+}
+
+.EmailConfirm__content img {
+  width: 66px;
+  height: 66px;
+}
+.EmailConfirm__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* width: 90%; */
+    text-align: center;
+    margin-top: 60px;
+    padding: 0 16px;
+}
+
+.EmailConfirm__skiptxt{
+    text-align: center;
+    margin-top: 20px;
+
+    font-weight: 300;
+    font-size: 13px;
+}

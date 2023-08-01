@@ -29,10 +29,9 @@ const addTransaction = async (req, res) => {
       transactions.unshift({ type, category, value, date });
 
       if (type === "income") {
-         income += +value;
+         income += parseInt(value);
       } else if (type === "expense") {
-         expense -= +value;
-         expense = Math.abs(expense);
+         expense += parseInt(value);
       }
       balance = income - expense;
 

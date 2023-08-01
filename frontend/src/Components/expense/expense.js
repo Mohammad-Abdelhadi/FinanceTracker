@@ -4,14 +4,13 @@ import Time from "../../Images/Time.svg";
 import Battery from "../../Images/Battery.svg";
 import ArrowBack from "../../Images/ArrowBack.svg";
 import ThreeDot from "../../Images/ThreeDot.svg";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWalletContext } from "../../hooks/useWalletContext";
 
 const Expense = () => {
-
-   const {user} = useAuthContext();
-   const {dispatch}= useWalletContext();
+  const { user } = useAuthContext();
+  const { dispatch, wallet } = useWalletContext();
 
   // // ADD NEW CATEGORIES TO DATA IN FIREBASE
   const options = [
@@ -27,24 +26,50 @@ const Expense = () => {
 
   const [type, setType] = useState("");
   const [category, setCategory] = useState(options[0].value);
-  const [value, setValue] = useState('');
-  const [selectedDate, setSelectedDate] = useState("");
+  const [value, setValue] = useState("");
+  const [date, setDate] = useState("");
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(category, type, selectedDate, value);
-    
-   // const transaction = {}
+    console.log(category, type, date, value);
 
-   //  const response = await fetch ('/api/wallet/add' , {
-   //    method :'POST',
-   //    headers : {'Content-Type' : 'application/json' ,
-   //       'Authorization' :`Bearer ${user.token}`},
-   //       body: JSON.stringify()
-   //  })
+    const transaction = { type, category, value, date };
+
+    const response = await fetch("/api/wallet/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+      body: JSON.stringify(transaction),
+    });
+
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      console.log(json)
+      setType("");
+      setCategory("");
+      setValue("");
+      setDate("");
+      setError(null);
+      wallet.transactions.unshift(transaction);
+      if (type === "income") {
+        wallet.balance += (+value);
+        wallet.income += (+value);
+      } else if (type === "expense") {
+        wallet.balance -= (+value);
+        wallet.expense += (+value);
+      }
+      console.log("new transaction added", transaction);
+      dispatch({ type: "SET_WALLET", payload: wallet });
+    }
   };
-  
+
   return (
     <>
       <div id="expense__container">
@@ -92,7 +117,7 @@ const Expense = () => {
                 className="form-select mt-2"
                 aria-label="Default select example"
                 value={type}
-                onChange={(e)=> setType(e.target.value)}
+                onChange={(e) => setType(e.target.value)}
                 required
               >
                 <option defaultValue>Choose Your Process</option>
@@ -107,11 +132,11 @@ const Expense = () => {
                 className="form-select mt-2"
                 aria-label="Default select example"
                 value={category}
-                onChange={ (e) => setCategory(e.target.value)}
+                onChange={(e) => setCategory(e.target.value)}
               >
-                {options.map((option , index) => (
+                {options.map((option, index) => (
                   <>
-                    <option key={index}  value={option.value} defaultValue>
+                    <option key={index} value={option.value} defaultValue>
                       {option.text}
                     </option>
                   </>
@@ -126,7 +151,7 @@ const Expense = () => {
                 className={`form-control mt-2 `}
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-                onChange={ (e)=> setValue(e.target.value)}
+                onChange={(e) => setValue(e.target.value)}
                 value={value}
               />
             </div>
@@ -138,8 +163,8 @@ const Expense = () => {
                 className="form-control mt-2"
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
                 required
               />
             </div>
@@ -168,4 +193,4 @@ const Expense = () => {
   );
 };
 
-export default Expense ;
+export default Expense;

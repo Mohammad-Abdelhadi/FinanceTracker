@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./expense.css";
 import Time from "../../Images/Time.svg";
 import Battery from "../../Images/Battery.svg";
 import ArrowBack from "../../Images/ArrowBack.svg";
 import ThreeDot from "../../Images/ThreeDot.svg";
-import { Link, json } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWalletContext } from "../../hooks/useWalletContext";
 
@@ -150,6 +150,7 @@ const Expense = () => {
                      <input
                         id="amount"
                         type="number"
+                        placeholder="0$"
                         className={`form-control mt-2 `}
                         aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default"

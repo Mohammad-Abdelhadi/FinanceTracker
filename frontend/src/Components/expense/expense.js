@@ -48,6 +48,7 @@ const Expense = () => {
 
       if (!response.ok) {
          setError(json.error);
+         console.log(error);
       }
       if (response.ok) {
          setType("");
@@ -62,8 +63,6 @@ const Expense = () => {
             wallet.expense += parseInt(value);
          }
          wallet.balance = parseInt(wallet.income) - parseInt(wallet.expence);
-         console.log(wallet.balance);
-         console.log("new transaction added", transaction);
          dispatch({ type: "SET_WALLET", payload: wallet });
       }
    };

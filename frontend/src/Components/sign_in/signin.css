@@ -44,14 +44,31 @@
 }
 
 .forgot_pas {
-  margin-left: -36%;
+  margin-left: 17%;
   font-size: small;
   color: #b0b0b0;
-  margin-top: 0.1rem;
+  margin-bottom: 0.5rem;
 }
-
+.error__div {
+  width: 100%;
+  height: 2rem;
+  color: #ff0000;
+  align-items: center;
+  border: none;
+  font-size: 14px;
+  display: flex;
+  align-items: start;
+  margin-left: 9.5rem;
+}
+.error__container{
+  width: 100%;
+  height: 2rem;
+  background-color: #ffffff;
+  display: grid;
+  place-items: center;
+}
 .have-account {
-  margin-left: -3%;
+  margin-left: 17%;
   font-size: 12px;
 }
 
@@ -77,7 +94,7 @@
   place-items: center;
   border-radius: 40px;
   color: #fff;
-  margin: 2rem 0 2rem 4.8rem;
+  margin: 1rem 0 3rem 4.8rem;
   border: none;
 }
 

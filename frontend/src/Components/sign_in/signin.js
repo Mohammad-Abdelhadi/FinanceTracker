@@ -96,14 +96,10 @@ const Signin = () => {
                         Not Match Email Or Wrong Password
                      </label>
                   )}
-                  <div className="singin_error__div">** please enter your email</div>
-                  <div className="forgot_pas">Forgot password?</div>
-                  <div className="have-account">
-                     If you don't have an account
-                     <Link to="/signup">
-                        <span>&nbsp;Register here!</span>
-                     </Link>
-                  </div>
+                 
+                  <div className="error__container">
+            { error && <div className="error__div">{error}</div>}
+            </div>
                </div>
                <div>
                   {/* {error && <div>{error}</div>} */}
@@ -114,13 +110,21 @@ const Signin = () => {
                      {/* <Link>Sign In</Link> */}
                      Sign In
                   </button>
+                  <div className="forgot_pas">
+                     <Link to="/resetpassword">Forgot password ?</Link></div>
+                  <div className="have-account">
+                     If you don't have an account
+                     <Link to="/signup">1
+                        <span>&nbsp;Register here!</span>
+                     </Link>
+                  </div>
                </div>
-               <div className="signin-continue_with mt-1">or continue with</div>
+               {/* <div className="signin-continue_with mt-1">or continue with</div>
                <div className="d-flex justify-content-center gap-3 my-4">
                   <img src={facebook} width="10%" alt="" />
                   <img src={apple} width="10%" alt="" />
                   <img src={google} width="10%" alt="" />
-               </div>
+               </div> */}
             </form>
          </div>
       </>

@@ -22,12 +22,13 @@
 }
 
 .sign_up h1 {
+  margin-top: 1rem;
   margin-right: 7rem;
   font-size: 28px;
 }
 
 .input_up {
-  margin-top: 1rem;
+  margin-top: .5rem;
   margin-left: -15%;
 }
 
@@ -57,8 +58,6 @@
 }
 
 .signUp_form div label {
-  margin-top: 1%;
-  margin-bottom: 7%;
   font-size: 12px;
   width: 70%;
   margin-right: 3.7rem;
@@ -109,17 +108,18 @@
   /* padding: 20px 50px 20px 15px; */
   background-color: #f2f9ff;
   color: #65b2fa;
-  padding-right: 30%;
+  padding-right: 10%;
   border: none;
 }
 .error__div {
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   color: #ff0000;
   align-items: center;
   border: none;
   font-size: 14px;
-  margin-left: 5.5rem;
+  display: flex;
+  align-items: start;
 }
 .custom_input{
   background-color: #f2f9ff;
@@ -127,7 +127,6 @@
   width: 17rem;
   border: none;
   height: 3.5rem;
-  margin-left: 5.5rem;
   padding-left: 1rem;
 }
 .custom_input:focus{
@@ -136,7 +135,25 @@ background-color: #f2f9ff;
 color: #65b2fa;
 border: none;
 }
-
+.error__container{
+  width: 100%;
+  height: 2rem;
+  background-color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+.login_link{
+  font-size: 12px;
+  margin-bottom: 1rem;
+}
+.login_link__span{
+  color: #0071d9;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color: #0071d9;
+}
 @media (min-width: 375px) and (max-width: 424px) {
   .btn_Register {
     width: 289px;

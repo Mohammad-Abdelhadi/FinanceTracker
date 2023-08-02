@@ -84,6 +84,21 @@ function App() {
           // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
           element={<CreatePassword />}
         />
+        <Route
+          path="/WalletEmail"
+          // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+          element={<WalletEmail />}
+        />
+        <Route
+          path="/ConfrimWallet"
+          // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+          element={<ConfirmWallet />}
+        />
+        <Route
+          path="/SuccessfulyWallet"
+          // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+          element={<SuccessfulyWallet />}
+        />
         <Route path="/*" element={<Navigate to="/onboarding" />} />
       </Routes>
       {!isSplashPage && <Navbar />}

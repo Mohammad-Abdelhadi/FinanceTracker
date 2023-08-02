@@ -105,6 +105,23 @@ padding-top: 1.2rem;
     font-size: 18px;
 }
 
+
+.logout-button{
+    border: none;
+    color: #fff;
+    padding: 0.5rem;
+    width: 100%;
+    background: linear-gradient(180deg, #5DAEFA -17.19%, #0071D9 123.44%);
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+
+
+
+
 @media (min-width :375px) and (max-width:425px) {
 
     .user__profile__container__name {

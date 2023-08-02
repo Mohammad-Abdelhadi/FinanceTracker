@@ -23,5 +23,5 @@ router.post("/add", addTransaction);
 router.post("/tranfertoinformation", tranferToInformation);
 
 // Confirm send
-router.post("/tranfertoinformation", confirmTrasferMoney);
+router.post("/confirmtrasfermoney", confirmTrasferMoney);
 module.exports = router;

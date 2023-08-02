@@ -1,7 +1,7 @@
 const User = require("../models/userModel");
 const Wallet = require("../models/walletModel");
 
-// dynamic functions
+// dynamic functions ////////////////////
 const pushTransaction = async (
    transactions,
    type,
@@ -36,6 +36,7 @@ const getUserWallet = async (_id) => {
       userId: _id.toString(),
    }));
 };
+/////////////////////////////////////////////
 
 // get Wallet
 const getWallet = async (req, res) => {
@@ -51,7 +52,7 @@ const getWallet = async (req, res) => {
       res.status(400).json({ error: error.message });
    }
 };
-// add Wallet
+// add Transaction
 const addTransaction = async (req, res) => {
    const { _id } = req.user;
    const { type, category, value, date } = req.body;
@@ -81,7 +82,7 @@ const addTransaction = async (req, res) => {
 const tranferToInformation = async (req, res) => {
    const { _id } = req.user;
    const { emailTo, value } = req.body;
-
+   // to do
    try {
       let { balance } = await getUserWallet(_id);
 
@@ -89,13 +90,15 @@ const tranferToInformation = async (req, res) => {
          throw Error("You don't have enough money");
       }
 
-      const {
-         _id: ToId,
-         username,
-         email,
-      } = await User.findOne({ email: emailTo });
+      const toUser = await User.findOne({ email: emailTo });
 
-      res.status(200).json({ ToId, username, email, value });
+      if (!toUser) {
+         throw Error("Can't find this user");
+      }
+
+      const { _id: toId, username, email } = toUser;
+
+      res.status(200).json({ toId, username, email, value });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }
@@ -104,10 +107,51 @@ const tranferToInformation = async (req, res) => {
 // tranfer money
 const confirmTrasferMoney = async (req, res) => {
    const { _id } = req.user;
-   const { username, emailTo, value } = req.body;
+   const { toId, username, email, value } = req.body;
 
    try {
-      res.status(200).json({ username, email, value });
+      const {
+         balance: fbalance,
+         income: fincome,
+         expense: fexpense,
+         transactions: ftransactions,
+      } = await getUserWallet(_id);
+      const {
+         balance: tbalance,
+         income: tincome,
+         expense: texpense,
+         transactions: ttransactions,
+      } = await getUserWallet(toId);
+
+      if (fbalance < value) {
+         throw Error("You don't have enough money");
+      }
+
+      const fromWallet = await pushTransaction(
+         ftransactions,
+         "expense",
+         `send money to ${username}`,
+         value,
+         new Date().toLocaleString(),
+         fbalance,
+         fincome,
+         fexpense,
+         _id
+      );
+
+      const toWallet = await pushTransaction(
+         ttransactions,
+         "income",
+         `receive money from ${req.user.username}`,
+         value,
+         new Date().toLocaleString(),
+         tbalance,
+         tincome,
+         texpense,
+         toId
+      );
+
+      res.status(200).json({ fromWallet, toWallet });
    } catch (error) {
       res.status(400).json({ error: error.message });
    }

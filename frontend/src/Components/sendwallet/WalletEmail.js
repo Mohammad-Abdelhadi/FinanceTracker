@@ -81,6 +81,7 @@ const WalletEmail = () => {
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
                 onChange={(e) => setValue(e.target.value)}
+                min="0"
                 value={value}
               />
             </div>

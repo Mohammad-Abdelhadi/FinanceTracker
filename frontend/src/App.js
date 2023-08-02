@@ -12,11 +12,14 @@ import Wallet from "./Components/Wallet/Wallet";
 import Expense from "./Components/expense/expense";
 import Navbar from "./Components/Navbar/Navbar";
 import UserProfile from "./Components/UserProfile/UserProfile";
-import { createContext } from "react";
-import { useAuthContext } from "./hooks/useAuthContext";
+import ResetPassword from "./resetPassword/ResetPassword";
 import CreatePassword from "./resetPassword/CreatePassword";
 import EmailConfirm from "./resetPassword/EmailConfirm";
-import ResetPassword from "./resetPassword/ResetPassword";
+import WalletEmail from "./Components/sendwallet/WalletEmail";
+import ConfirmWallet from "./Components/sendwallet/ConfrimWallet";
+import SuccessfulyWallet from "./Components/sendwallet/SuccsessfulyWallet";
+import { createContext } from "react";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 export const AppContext = createContext();
 function App() {
@@ -80,6 +83,21 @@ function App() {
                path="/createpassword"
                // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
                element={<CreatePassword   />}
+            />
+            <Route
+               path="/walletemail"
+               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+               element={<WalletEmail   />}
+            />
+            <Route
+               path="/confirmwallet"
+               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+               element={<ConfirmWallet   />}
+            />
+            <Route
+               path="/SuccessfulyWallet"
+               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
+               element={<SuccessfulyWallet   />}
             />
          </Routes>
          {!isSplashPage && <Navbar />}

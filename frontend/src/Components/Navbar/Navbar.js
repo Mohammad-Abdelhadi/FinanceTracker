@@ -38,7 +38,7 @@ const Navbar = () => {
          </Link>
 
          <Nav.Item>
-            <Link to="/walletemail" eventkey="Wallet">
+            <Link to="walletemail" eventkey="Wallet">
                <img src={wallet} alt="" className="wallet" />
             </Link>
          </Nav.Item>

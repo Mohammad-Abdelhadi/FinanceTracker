@@ -10,16 +10,12 @@ const WalletEmail = () => {
   const { user } = useAuthContext();
   const { dispatch, wallet } = useWalletContext();
   // // ADD NEW CATEGORIES TO DATA IN FIREBASE
-
+  const [value, setValue] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-
-   
-
-
-  
   };
 
   return (
@@ -71,44 +67,46 @@ const WalletEmail = () => {
                 className={`form-control mt-2 `}
                 aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default"
-          
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-          
-                   <div className="my-3">
-                     <label htmlFor="amount">Amount:</label>
-                     <input
-                        id="amount"
-                        type="number"
-                        placeholder="0$"
-                        className={`form-control mt-2 `}
-                        aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default"
-                        onChange={(e) => setValue(e.target.value)}
-                        value={value}
-                     />
-                  </div>
-                  {/* <div className="WalletEmail__error" style={{}}>** please enter your email</div> */}
-                  {/* <div className="singin_error__div">** Your Balance Not Enough</div> */}
 
-                  {error && <div className="singin_error__div">{error}</div>}
+            <div className="my-3">
+              <label htmlFor="amount">Amount:</label>
+              <input
+                id="amount"
+                type="number"
+                placeholder="0$"
+                className={`form-control mt-2 `}
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default"
+                onChange={(e) => setValue(e.target.value)}
+                min="0"
+                value={value}
+              />
+            </div>
+            {/* <div className="WalletEmail__error" style={{}}>** please enter your email</div> */}
+            {/* <div className="singin_error__div">** Your Balance Not Enough</div> */}
+
+            {error && <div className="singin_error__div">{error}</div>}
 
             <div className="container add__btn  ">
               <div className="my-2">
-             <Link to="/confirmwallet">
-             <button
-                  type="submit"
-                  className="btn w-100 "
+                <Link to="/ConfrimWallet">
+                  <button
+                    type="submit"
+                    className="btn w-100 "
 
-                  // disabled={
-                  //    !selectedProcess ||
-                  //    !selected ||
-                  //    !selectedDate ||
-                  //    !expenseValue
-                  // }
-                >
-                  send
-                </button></Link>
+                    // disabled={
+                    //    !selectedProcess ||
+                    //    !selected ||
+                    //    !selectedDate ||
+                    //    !expenseValue
+                    // }
+                  >
+                    send
+                  </button>
+                </Link>
               </div>
             </div>
           </form>

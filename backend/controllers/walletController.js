@@ -48,6 +48,8 @@ const addTransaction = async (req, res) => {
    }
 };
 
+// tranfer money
+
 module.exports = {
    getWallet,
    addTransaction,

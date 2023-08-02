@@ -115,7 +115,7 @@ const Signin = () => {
                   <div className="have-account">
                      If you don't have an account
                      <Link to="/signup">1
-                        <span>&nbsp;Register here!</span>
+                        <span>&nbsp;Sign up here!</span>
                      </Link>
                   </div>
                </div>

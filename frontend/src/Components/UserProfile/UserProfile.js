@@ -12,11 +12,19 @@ import message from "../../Images/message.svg";
 import diamond from "../../Images/diamond.svg";
 import { Link } from "react-router-dom";
 import userBackground from '../../Images/userBackground.svg'
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from "../../hooks/useLogout";
+
 
 const UserProfile = () => {
-  let index = localStorage.getItem("index");
-  let name = JSON.parse(localStorage.getItem("user name"));
-  let user_name = name[index];
+
+  const {user}=useAuthContext();
+  const {logout}=useLogout()
+  
+const handleClick=()=>{
+  logout();
+}
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -51,7 +59,7 @@ const UserProfile = () => {
         </div>
       </div>
       <div  className="userName">
-        <p>{user_name}</p>
+        <p>{user.username}</p>
       </div>
       <div className="menu__container_diamond">
         <img src={diamond} alt="" className="diamond" />
@@ -74,8 +82,8 @@ const UserProfile = () => {
         <p>Login and security</p>
       </div>
       <div className="menu__container_last">
-        <img src={data} alt="" />
-        <p className="last-p">Data and privacy</p>
+        {/* <img src={data} alt="" /> */}
+        <button className="logout-button" onClick={handleClick}>Signout</button>
       </div>
     </div>
   );

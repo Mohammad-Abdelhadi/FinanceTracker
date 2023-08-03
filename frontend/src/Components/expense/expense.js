@@ -73,16 +73,7 @@ const Expense = () => {
             <main id="expense__page" className="container">
                <div className="row position-relative">
                   {/* Mobile Info In top */}
-                  <div className="col-12 center__battery ">
-                     <div className="d-flex justify-content-between ">
-                        <div>
-                           <img alt="#" src={Time} />
-                        </div>
-                        <div>
-                           <img alt="#" src={Battery} />
-                        </div>
-                     </div>
-                  </div>
+                 
                   {/* Arrow Back and Three dot and page name */}
                   <div className="col-12">
                      <div className="d-flex justify-content-around mt-5">
@@ -93,7 +84,7 @@ const Expense = () => {
                         </div>
                         <div>
                            <Link className="text__edit" to="#">
-                              Add Expense or Income
+                              Add Transaction
                            </Link>
                         </div>
                         <div>

@@ -47,6 +47,7 @@ const WalletEmail = () => {
                      <input
                         id="Email"
                         type="text"
+                        required
                         placeholder="Example@example.com"
                         className={`form-control mt-2 `}
                         aria-label="Sizing example input"
@@ -61,11 +62,12 @@ const WalletEmail = () => {
                         id="amount"
                         type="number"
                         placeholder="0$"
+                        required
                         className={`form-control mt-2 `}
                         aria-label="Siyzing example input"
                         aria-describedby="inputGroup-sizing-default"
                         onChange={(e) => setValue(e.target.value)}
-                        min="0"
+                        min="1"
                         value={value}
                      />
                      <div className="error_container">

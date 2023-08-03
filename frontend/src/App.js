@@ -61,10 +61,10 @@ function App() {
                path="/statistic"
                element={user ? <Statistic /> : <Navigate to="/onboarding" />}
             />
-            <Route
+            {/* <Route
                path="/Wallet"
                element={user ? <Wallet /> : <Navigate to="/onboarding" />}
-            />
+            /> */}
             <Route
                path="/UserProfile"
                element={user ? <UserProfile /> : <Navigate to="/onboarding" />}

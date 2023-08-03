@@ -6,13 +6,14 @@ import ThreeDot from "../../Images/ThreeDot.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWalletContext } from "../../hooks/useWalletContext";
+import "./WalletEmail.css"
 const WalletEmail = () => {
   const { user } = useAuthContext();
   const { dispatch, wallet } = useWalletContext();
   // // ADD NEW CATEGORIES TO DATA IN FIREBASE
   const [value, setValue] = useState("");
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("test");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,17 +39,9 @@ const WalletEmail = () => {
             <div className="col-12">
               <div className="d-flex justify-content-around mt-5">
                 <div>
-                  <Link to="/Wallet">
-                    <img alt="#" src={ArrowBack} />
-                  </Link>
-                </div>
-                <div>
                   <Link className="text__edit" to="#">
-                    Send Wallet
+                    Send Money
                   </Link>
-                </div>
-                <div>
-                  <img alt="#" src={ThreeDot} />
                 </div>
               </div>
             </div>
@@ -59,7 +52,7 @@ const WalletEmail = () => {
             onSubmit={handleSubmit}
           >
             <div className="my-3">
-              <label htmlFor="Email">Email to:</label>
+              <label htmlFor="Email">Email To: (Email)</label>
               <input
                 id="Email"
                 type="text"
@@ -78,17 +71,19 @@ const WalletEmail = () => {
                 type="number"
                 placeholder="0$"
                 className={`form-control mt-2 `}
-                aria-label="Sizing example input"
+                aria-label="Siyzing example input"
                 aria-describedby="inputGroup-sizing-default"
                 onChange={(e) => setValue(e.target.value)}
                 min="0"
                 value={value}
               />
+              <div className="error__container" >
+              {error && <div className="signin_error__div" >{error}</div>}
+
+              </div>
             </div>
             {/* <div className="WalletEmail__error" style={{}}>** please enter your email</div> */}
             {/* <div className="singin_error__div">** Your Balance Not Enough</div> */}
-
-            {error && <div className="singin_error__div">{error}</div>}
 
             <div className="container add__btn  ">
               <div className="my-2">

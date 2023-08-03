@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./onboarding.css";
 // import {useParams} from 'react-router-dom'
-import newman from "../../Images/newman.png";
-import onboardingback from "../../Images/onboardingback.svg";
+import man from "../../Images/man.png";
+import backgrounblue from "../../Images/backgrounblue.svg";
 import { Link } from "react-router-dom";
 const Onboarding = () => {
    // const params = useParams()
@@ -16,12 +16,12 @@ const Onboarding = () => {
          <div
             className="d-flex align-items-center flex-column onboarding-container"
             style={{
-               backgroundImage: `url(${onboardingback})`,
+               backgroundImage: `url(${backgrounblue})`,
                backgroundRepeat: "no-repeat",
                backgroundSize: "cover",
             }}
          >
-            <img src={newman} className="man__img" alt="#" />
+            <img src={man} className="man__img" alt="#" />
 
             <div className="text">
                Spend Smarter

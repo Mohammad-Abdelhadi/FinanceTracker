@@ -6,9 +6,9 @@
      height: 300px;
 }
 .statics__transiction-container {
-    margin-top: 6rem;
+
     max-width: 85%;
-    margin: 6rem auto;
+    margin: 3rem auto 7rem auto;
 }
 
 .statics__Transiction-history{
@@ -68,7 +68,7 @@
 @media (min-width:319px) and (max-width:375px){
    
     .statics__Transiction-history{
-        gap:0 124px;
+        gap:0 155px;
 }
     button {
         width: 14.3%;

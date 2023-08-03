@@ -1,7 +1,7 @@
 .text{
     text-align:center;
     font-size:xx-large;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     color: #0071D9;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
     }
@@ -32,8 +32,9 @@
      
     }
     .man__img{
-     margin-top: 2rem ; 
-      width: 50%;
+     margin-top: 4rem ; 
+      width: 120%;
+      margin-right: 2.5rem;
     }
     .sign__in__link{
         text-decoration: none;
@@ -43,8 +44,8 @@
    
         .text{
            
-            margin-top: 3.5rem;
-            color: #0071D9;
+            margin-top: 1.5rem;
+            color: #0067c7;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
             }
             .have_account{
@@ -59,7 +60,7 @@
         
         .man__img{
             margin-top: 2rem ; 
-             width: 60%;
+             width: 90%;
         }
         
         

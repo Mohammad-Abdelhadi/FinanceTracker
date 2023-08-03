@@ -48,10 +48,10 @@ const Home = () => {
                }}
             >
                <div>
-                  <div className="charge-container">
+                  {/* <div className="charge-container">
                      <p>9:41</p>
                      <img src={charge} alt="" />
-                  </div>
+                  </div> */}
 
                   <div className="name-container">
                      <div>
@@ -113,7 +113,7 @@ const Home = () => {
                               <div>
                                  <img src={Dollar} alt="" />
                               </div>
-                              <div>
+                              <div className="transaction__category">
                                  <p>{transaction.category}</p>
                                  <p>{transaction.date}</p>
                               </div>

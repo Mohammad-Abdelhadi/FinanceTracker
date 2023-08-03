@@ -72,6 +72,8 @@ const Signin = () => {
                   <div className="sign_mono">
                      <h1>Sign in</h1>
                   </div>
+                     <div className="headline">Manage Your Finances: Sign In to Your Secure Financial Hub</div>
+                  <label className="email__label">Email</label>
                   <div className="signin-inputs-div">
                      <input
                         type="email"
@@ -80,6 +82,7 @@ const Signin = () => {
                         value={email}
                      />
                   </div>
+                  <label>Password</label>
                   <div>
                      <input
                         type="password"

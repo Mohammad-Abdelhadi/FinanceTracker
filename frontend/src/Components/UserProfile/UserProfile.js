@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./UserProfile.css";
-import ring from "../../Images/ring.svg";
+import exit from "../../Images/exit.svg";
 import charge from "../../Images/charge.svg";
 import ArrowBack from "../../Images/ArrowBack.svg";
 import userimgnew from "../../Images/userimgnew.svg";
@@ -40,18 +40,14 @@ const handleClick=()=>{
         }}
       >
         <div>
-          <div className="user__profile__container__charge">
-            <p>9:41</p>
-            <img src={charge} alt="" />
-          </div>
-
+          
           <div className="user__profile__container__name">
             <div>
               <Link to="/HomePage">
               <img src={ArrowBack} alt="#" /></Link>
             </div>
             <p>Profile</p>
-            <img src={ring} alt="" />
+            <img src={exit} alt="" onClick={handleClick} style={{width:"25px"}}/>
           </div>
         </div>
         <div className="user_img_div">
@@ -83,7 +79,6 @@ const handleClick=()=>{
       </div>
       <div className="menu__container_last">
         {/* <img src={data} alt="" /> */}
-        <button className="logout-button" onClick={handleClick}>Signout</button>
       </div>
     </div>
   );

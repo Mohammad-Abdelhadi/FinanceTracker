@@ -1,7 +1,4 @@
-import React, { useEffect } from "react";
-import facebook from "../../Images/facebook.png";
-import apple from "../../Images/apple.png";
-import google from "../../Images/google.png";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./signup.css";
 import { useState } from "react";
@@ -19,7 +16,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   
   await signup(username, email, password)
-  
+
   let Email;
   let Pass;
   let name;
@@ -60,7 +57,8 @@ const handleSubmit = async (e) => {
          
           </div>
           <form className="ms-5"  onSubmit={handleSubmit}>
-            <div className=" ">
+            <label >Email</label>
+            <div className="1">
               <input
                 type="email"
                 className="custom_input"
@@ -69,14 +67,9 @@ const handleSubmit = async (e) => {
                 value={email}
                 required
               />
-              <label
-                for="exampleInputEmail1"
-                className="form-label"
-                id="label_email"
-              >
-              </label>
+              
             </div>
-            <label></label>
+            <label className="signup__label">Username</label>
             <div className="">
               <input
                 type="text"
@@ -87,7 +80,7 @@ const handleSubmit = async (e) => {
                 required
               />
             </div>
-            <label></label>
+            <label className="signup__label">Password</label>
             <div className="input-group">
               <input
                 type='password'
@@ -98,10 +91,7 @@ const handleSubmit = async (e) => {
                 value={password}
               />
               </div>
-            <label
-              
-            >
-            </label>
+            <label className="signup__label">Confirm password</label>
             <div className="input-group">
               <input
                 type='password'
@@ -113,17 +103,12 @@ const handleSubmit = async (e) => {
               />
             </div>
             <label
-          
+          className="signup__label"
             >
             </label>
-           <div className="error__container">
-            { error && <div className="error__div">{error}</div>}
+           <div className="signup__error__container">
+            { error && <div className="signup__error__div">{error}</div>}
             </div>
-            <div className="login_link">If you already have
-            an account register<br/>
-            You can <Link to="/signin">
-            <span className="login_link__span">&nbsp;sign in here!</span>
-                     </Link></div>
             <div className="btn__div">
               <button
                 type="submit"
@@ -135,6 +120,11 @@ const handleSubmit = async (e) => {
               </button>
             </div>
           </form>
+            <div className="signup_link">If you already have
+            an account register<br/>
+            You can <Link to="/signin">
+            <span className="signup_link__span">&nbsp;sign in here!</span>
+                     </Link></div>
         </div>
         {/* <div className="continue_with mt-3">or continue with</div>
         <div className="d-flex justify-content-center gap-3 my-3">

@@ -6,6 +6,8 @@ const router = express.Router();
 const {
    getWallet,
    addTransaction,
+   tranferToInformation,
+   confirmTrasferMoney,
 } = require("../controllers/walletController");
 
 // middleware
@@ -17,4 +19,9 @@ router.get("/", getWallet);
 // post income & expense
 router.post("/add", addTransaction);
 
+// tranfer to information
+router.post("/tranfertoinformation", tranferToInformation);
+
+// Confirm send
+router.post("/confirmtrasfermoney", confirmTrasferMoney);
 module.exports = router;

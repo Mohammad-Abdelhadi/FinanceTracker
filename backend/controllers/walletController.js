@@ -82,6 +82,7 @@ const addTransaction = async (req, res) => {
 const tranferToInformation = async (req, res) => {
    const { _id } = req.user;
    const { emailTo, value } = req.body;
+   console.log(req.body);
    // to do
    try {
       let { balance } = await getUserWallet(_id);
@@ -130,7 +131,7 @@ const confirmTrasferMoney = async (req, res) => {
       const fromWallet = await pushTransaction(
          ftransactions,
          "expense",
-         `send money to ${username}`,
+         `send to ${username}`,
          value,
          new Date().toLocaleString(),
          fbalance,
@@ -142,7 +143,7 @@ const confirmTrasferMoney = async (req, res) => {
       const toWallet = await pushTransaction(
          ttransactions,
          "income",
-         `receive money from ${req.user.username}`,
+         `receive from ${req.user.username}`,
          value,
          new Date().toLocaleString(),
          tbalance,

@@ -1,5 +1,14 @@
-.error__container {
-  height: "40px";
-  padding: 5px;
-  margin-top: 30px;
+.error_container {
+   position: relative;
+   height: 40px;
+   padding: 10px 5px;
+   margin-top: 10px;
+   display: block;
+}
+
+.signin_error_div {
+   color: red;
+   padding: 0;
+   margin: 0;
+   font-size: 14px;
 }

@@ -130,7 +130,12 @@ const Statistic = () => {
                      >
                         <div className="statics__left-side">
                            <div>
-                              <img src={Dollar} alt="#" />
+                              <img
+                                 src={`images/${
+                                    transaction.category.split(" ")[0]
+                                 }.svg`}
+                                 alt=""
+                              />
                            </div>
                            <div>
                               <h6>{transaction.category}</h6>

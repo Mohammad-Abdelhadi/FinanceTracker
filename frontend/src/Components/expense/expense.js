@@ -20,6 +20,9 @@ const Expense = () => {
       { value: "education", text: "Education" },
       { value: "phone", text: "Phone" },
       { value: "health", text: "Health" },
+      { value: "food", text: "Food" },
+      { value: "shopping", text: "Shopping" },
+      { value: "subscription", text: "Subscription" },
    ];
 
    const [type, setType] = useState("");

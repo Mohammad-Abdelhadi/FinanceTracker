@@ -2,13 +2,11 @@ import React, { useEffect } from "react";
 import topBackground from "./Home.css";
 import "./Home.css";
 import ring from "../../Images/ring.svg";
-import charge from "../../Images/charge.svg";
+import money from "money-math";
 import dots from "../../Images/dots.svg";
 import whitearrow from "../../Images/whitearrow.svg";
 import incomeArrow from "../../Images/incomeArrow.svg";
 import expensesArrow from "../../Images/expensesArrow.svg";
-// import from firebase to get data
-import Dollar from "../../Images/dollar-coin-svgrepo-com.svg";
 import { useWalletContext } from "../../hooks/useWalletContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
@@ -48,11 +46,6 @@ const Home = () => {
                }}
             >
                <div>
-                  {/* <div className="charge-container">
-                     <p>9:41</p>
-                     <img src={charge} alt="" />
-                  </div> */}
-
                   <div className="name-container">
                      <div>
                         <p>Welcome</p>
@@ -73,7 +66,10 @@ const Home = () => {
                         </div>
                      </div>
                      <p className="balance">
-                        ${wallet === null ? 0 : wallet.balance.toFixed(1)}
+                        $
+                        {wallet === null
+                           ? 0
+                           : money.format("USD", wallet.balance.toFixed(2))}
                      </p>
                      <div className="expense-container">
                         <div className="income">
@@ -88,12 +84,24 @@ const Home = () => {
                      <div className="expenses-values">
                         <div className="income-value">
                            <p>
-                              ${wallet === null ? 0 : wallet.income.toFixed(1)}
+                              $
+                              {wallet === null
+                                 ? 0
+                                 : money.format(
+                                      "USD",
+                                      wallet.income.toFixed(2)
+                                   )}
                            </p>
                         </div>
                         <div className="expense-value">
                            <p>
-                              ${wallet === null ? 0 : wallet.expense.toFixed(1)}
+                              $
+                              {wallet === null
+                                 ? 0
+                                 : money.format(
+                                      "USD",
+                                      wallet.expense.toFixed(2)
+                                   )}
                            </p>
                         </div>
                      </div>
@@ -111,7 +119,12 @@ const Home = () => {
                         <div className="transiction__homepage" key={i}>
                            <div className="home__left-side">
                               <div>
-                                 <img src={Dollar} alt="" />
+                                 <img
+                                    src={`images/${
+                                       transaction.category.split(" ")[0]
+                                    }.svg`}
+                                    alt=""
+                                 />
                               </div>
                               <div className="transaction__category">
                                  <p>{transaction.category}</p>

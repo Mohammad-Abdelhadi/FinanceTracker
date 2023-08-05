@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
-import facebook from "../../Images/facebook.png";
-import apple from "../../Images/apple.png";
-import google from "../../Images/google.png";
 import "./signin.css";
 import useLogin from "../../hooks/useLogin";
 

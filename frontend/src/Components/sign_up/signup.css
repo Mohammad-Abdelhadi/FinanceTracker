@@ -112,7 +112,7 @@
 .sign_up input {
   /* padding: 20px 50px 20px 15px; */
   background-color: #f2f9ff;
-  color: #65b2fa;
+  color: #222222;
   padding-right: 10%;
   border: none;
 }
@@ -128,7 +128,7 @@
 }
 .custom_input{
   background-color: #f2f9ff;
-  color: #65b2fa;
+  color: #222222;
   width: 20rem;
   border: none;
   height: 3.5rem;
@@ -137,7 +137,7 @@
 .custom_input:focus{
 outline: none !important;
 background-color: #f2f9ff;
-color: #65b2fa;
+color: #171717;
 border: none;
 }
 .signup__error__container{

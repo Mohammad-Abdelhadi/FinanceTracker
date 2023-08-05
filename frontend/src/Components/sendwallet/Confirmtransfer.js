@@ -10,7 +10,7 @@ import WalletIcon from "../../Images/WalletIcon.png";
 import { useTransferContext } from "../../hooks/useTransferContext";
 import useTransferConfirmation from "../../hooks/useTransferConfirmation";
 
-const ConfirmWallet = () => {
+const Confirmtransfer = () => {
    const { ConfirmationSend, isLoading, error } = useTransferConfirmation();
    const { transferInfo } = useTransferContext();
 
@@ -40,7 +40,7 @@ const ConfirmWallet = () => {
                   <div className="col-12">
                      <div className="d-flex justify-content-around mt-5">
                         <div>
-                           <Link to="/Wallet">
+                           <Link to="/sendmoney">
                               <img alt="#" src={ArrowBack} />
                            </Link>
                         </div>
@@ -125,4 +125,4 @@ const ConfirmWallet = () => {
    );
 };
 
-export default ConfirmWallet;
+export default Confirmtransfer;

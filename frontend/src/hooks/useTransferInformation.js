@@ -40,7 +40,7 @@ const useTransferInformation = () => {
          });
          setIsLoading(false);
          setError(null);
-         navigate("/ConfrimWallet");
+         navigate("/confirmtransfer");
       }
    };
    return { informationCheck, isLoading, error };

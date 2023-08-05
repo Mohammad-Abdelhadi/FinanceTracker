@@ -1,11 +1,11 @@
 import React from "react";
-// import './SuccessfulyWallet.css'
+// import './TransferSuccessfuly.css'
 import createBack from "../../Images/createBack.svg";
 import successful from "../../Images/successful.svg";
 import { Link } from "react-router-dom";
-import "./SuccessfulyWallet.css";
+import "./TransferSuccessfuly.css";
 import { useTransferContext } from "../../hooks/useTransferContext";
-const SuccessfulyWallet = () => {
+const TransferSuccessfuly = () => {
    const { transferInfo, dispatch } = useTransferContext();
 
    const handleClick = () => {
@@ -14,24 +14,24 @@ const SuccessfulyWallet = () => {
 
    return (
       <>
-         <div className="SuccessfulyWallet__createPasswordcontainer">
-            <div className="SuccessfulyWallet__content">
+         <div className="TransferSuccessfuly__createPasswordcontainer">
+            <div className="TransferSuccessfuly__content">
                <img src={successful} alt="" />
-               <p className="SuccessfulyWallet__resetpassword">
+               <p className="TransferSuccessfuly__resetpassword">
                   Transfer Successful
                </p>
-               <p className="SuccessfulyWallet__secondarytxt">
+               <p className="TransferSuccessfuly__secondarytxt">
                   Transfers are reviewed which may result in delays or funds
                   being frozen
                </p>
             </div>
             <div>
-               <p className="SuccessfulyWallet__amount">
+               <p className="TransferSuccessfuly__amount">
                  $ {transferInfo.value}
                </p>
             </div>
 
-            <div className="SuccessfulyWallet__createPasswordbtn__container">
+            <div className="TransferSuccessfuly__createPasswordbtn__container">
                <Link
                   to="/homepage"
                   style={{ textDecoration: "none" }}
@@ -50,4 +50,4 @@ const SuccessfulyWallet = () => {
    );
 };
 
-export default SuccessfulyWallet;
+export default TransferSuccessfuly;

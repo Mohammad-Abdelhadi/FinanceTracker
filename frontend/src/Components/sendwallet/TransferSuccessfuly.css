@@ -4,53 +4,53 @@
     box-sizing: border-box;
   }
   
-  .SuccessfulyWallet__createPasswordcontainer {
+  .TransferSuccessfuly__createPasswordcontainer {
     max-width: 425px;
     /* margin: 43px 0px 0 50px; */
     padding: 0 40px;
   }
   
-  .SuccessfulyWallet__resetpassword {
+  .TransferSuccessfuly__resetpassword {
     margin-top: 2rem;
     color: #0c79dd;
     font-weight: bolder;
   }
-  .SuccessfulyWallet__backcontainer {
+  .TransferSuccessfuly__backcontainer {
     display: flex;
     gap: 1rem;
   }
-  .SuccessfulyWallet__backcontainer img {
+  .TransferSuccessfuly__backcontainer img {
     width: 8px;
   }
-  .SuccessfulyWallet__backcontainer div {
+  .TransferSuccessfuly__backcontainer div {
     width: 8px;
     font-weight: 600;
   }
-  .SuccessfulyWallet__createPasswordtextcontainer {
+  .TransferSuccessfuly__createPasswordtextcontainer {
     margin-top: 2rem;
   }
-  .SuccessfulyWallet__createPasswordtextcontainer :nth-child(1) {
+  .TransferSuccessfuly__createPasswordtextcontainer :nth-child(1) {
     font-weight: 600;
     font-size: 24px;
   }
-  .SuccessfulyWallet__createPasswordtextcontainer :nth-child(2) {
+  .TransferSuccessfuly__createPasswordtextcontainer :nth-child(2) {
     font-weight: 300;
     font-size: 12px;
     max-width: 80%;
     margin-top: 0.5rem;
   }
-  .SuccessfulyWallet__inputscontainer {
+  .TransferSuccessfuly__inputscontainer {
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
 
-  .SuccessfulyWallet__createPasswordbtn__container {
+  .TransferSuccessfuly__createPasswordbtn__container {
     display: flex;
     justify-content: center;
   }
-  .SuccessfulyWallet__createPasswordbtn__container button {
+  .TransferSuccessfuly__createPasswordbtn__container button {
     width: 80%;
     height: 3.5rem;
     background: linear-gradient(180deg, #5daefa -17.19%, #0071d9 123.44%);
@@ -62,13 +62,13 @@
     margin-top: 2rem;
     border: none;
   }
-.SuccessfulyWallet__secondarytxt  {
+.TransferSuccessfuly__secondarytxt  {
     font-weight: 300;
     font-size: 12px;
     margin-bottom: 15px !important;
 }
 
-  .SuccessfulyWallet__content {
+  .TransferSuccessfuly__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@
   }
   
 
-  .SuccessfulyWallet__amount
+  .TransferSuccessfuly__amount
   {
     text-align: center;
     margin-top: 10px;

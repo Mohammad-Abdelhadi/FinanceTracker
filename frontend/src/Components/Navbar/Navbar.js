@@ -38,8 +38,8 @@ const Navbar = () => {
          </Link>
 
          <Nav.Item>
-            <Link to="walletemail" eventkey="Wallet">
-               <img src={wallet} alt="" className="wallet" />
+            <Link to="sendmoney" eventkey="sendmoney">
+               <img src={wallet} alt="" className="sendmoney" />
             </Link>
          </Nav.Item>
          <Nav.Item>

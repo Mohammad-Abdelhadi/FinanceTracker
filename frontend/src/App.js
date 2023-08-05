@@ -8,16 +8,16 @@ import Home from "./Components/Home/Home";
 import Signin from "./Components/sign_in/signin";
 import Signup from "./Components/sign_up/signup";
 import Statistic from "./Components/Statistic/Statistic";
-import Wallet from "./Components/Wallet/Wallet";
 import Expense from "./Components/expense/expense";
 import Navbar from "./Components/Navbar/Navbar";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import ResetPassword from "./resetPassword/ResetPassword";
 import CreatePassword from "./resetPassword/CreatePassword";
 import EmailConfirm from "./resetPassword/EmailConfirm";
-import WalletEmail from "./Components/sendwallet/WalletEmail";
-import ConfirmWallet from "./Components/sendwallet/ConfrimWallet";
-import SuccessfulyWallet from "./Components/sendwallet/SuccsessfulyWallet";
+import Confirmtransfer from "./Components/sendwallet/Confirmtransfer";
+import TransferSuccessfuly from "./Components/sendwallet/TransferSuccessfuly";
+import Sendmoney from "./Components/sendwallet/Sendmoney";
+
 import { createContext } from "react";
 import { useAuthContext } from "./hooks/useAuthContext";
 
@@ -85,19 +85,16 @@ function App() {
                element={<CreatePassword />}
             />
             <Route
-               path="/WalletEmail"
-               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
-               element={<WalletEmail />}
+               path="/sendmoney"
+               element={user ? <Sendmoney /> : <Navigate to="/onboarding" />}
             />
             <Route
-               path="/ConfrimWallet"
-               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
-               element={<ConfirmWallet />}
+               path="/confirmtransfer"
+               element={user ? <Confirmtransfer /> : <Navigate to="/onboarding" />}
             />
             <Route
-               path="/SuccessfulyWallet"
-               // element={user ? <CreatePassword /> : <Navigate to="/onboarding" />}
-               element={<SuccessfulyWallet />}
+               path="/transfersuccessfuly"
+               element={user ? <TransferSuccessfuly /> : <Navigate to="/onboarding" />}
             />
             <Route path="/*" element={<Navigate to="/onboarding" />} />
          </Routes>

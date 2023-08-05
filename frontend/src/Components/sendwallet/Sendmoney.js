@@ -6,9 +6,9 @@ import ThreeDot from "../../Images/ThreeDot.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useWalletContext } from "../../hooks/useWalletContext";
-import "./WalletEmail.css";
+import "./Sendmoney.css";
 import useTransferInformation from "../../hooks/useTransferInformation";
-const WalletEmail = () => {
+const Sendmoney = () => {
    const { informationCheck, isLoading, error } = useTransferInformation();
 
    const [value, setValue] = useState("");
@@ -95,4 +95,4 @@ const WalletEmail = () => {
    );
 };
 
-export default WalletEmail;
+export default Sendmoney;

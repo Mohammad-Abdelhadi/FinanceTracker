@@ -121,6 +121,7 @@ const Expense = () => {
                         aria-label="Default select example"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
+                        required
                      >
                         {options.map((option, index) => (
                            <>
@@ -146,6 +147,7 @@ const Expense = () => {
                         aria-describedby="inputGroup-sizing-default"
                         onChange={(e) => setValue(e.target.value)}
                         value={value}
+                        required
                      />
                   </div>
                   <div className="my-4">

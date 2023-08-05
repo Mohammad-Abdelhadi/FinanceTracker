@@ -32,7 +32,7 @@ const useTransferConfirmation = () => {
       if (response.ok) {
          setIsLoading(false);
          setError(null);
-         navigate("/SuccessfulyWallet");
+         navigate("/transfersuccessfuly");
       }
    };
    return { ConfirmationSend, isLoading, error };

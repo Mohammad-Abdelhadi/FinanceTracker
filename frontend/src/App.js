@@ -61,10 +61,6 @@ function App() {
                path="/statistic"
                element={user ? <Statistic /> : <Navigate to="/onboarding" />}
             />
-            {/* <Route
-               path="/Wallet"
-               element={user ? <Wallet /> : <Navigate to="/onboarding" />}
-            /> */}
             <Route
                path="/UserProfile"
                element={user ? <UserProfile /> : <Navigate to="/onboarding" />}
@@ -90,11 +86,15 @@ function App() {
             />
             <Route
                path="/confirmtransfer"
-               element={user ? <Confirmtransfer /> : <Navigate to="/onboarding" />}
+               element={
+                  user ? <Confirmtransfer /> : <Navigate to="/onboarding" />
+               }
             />
             <Route
                path="/transfersuccessfuly"
-               element={user ? <TransferSuccessfuly /> : <Navigate to="/onboarding" />}
+               element={
+                  user ? <TransferSuccessfuly /> : <Navigate to="/onboarding" />
+               }
             />
             <Route path="/*" element={<Navigate to="/onboarding" />} />
          </Routes>

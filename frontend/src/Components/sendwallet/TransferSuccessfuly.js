@@ -1,6 +1,4 @@
 import React from "react";
-// import './TransferSuccessfuly.css'
-import createBack from "../../Images/createBack.svg";
 import successful from "../../Images/successful.svg";
 import { Link } from "react-router-dom";
 import "./TransferSuccessfuly.css";
@@ -27,7 +25,7 @@ const TransferSuccessfuly = () => {
             </div>
             <div>
                <p className="TransferSuccessfuly__amount">
-                 $ {transferInfo.value}
+                  $ {transferInfo.value}
                </p>
             </div>
 

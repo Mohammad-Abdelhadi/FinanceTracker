@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./expense.css";
-import Time from "../../Images/Time.svg";
-import Battery from "../../Images/Battery.svg";
 import ArrowBack from "../../Images/ArrowBack.svg";
 import ThreeDot from "../../Images/ThreeDot.svg";
 import { Link } from "react-router-dom";
@@ -29,10 +27,11 @@ const Expense = () => {
    const [value, setValue] = useState("");
    const [date, setDate] = useState("");
    const [error, setError] = useState(null);
+   const [isLoading, setIsLoading] = useState(null);
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-
+      setIsLoading(true);
       const transaction = { type, category, value, date };
 
       const response = await fetch("/api/wallet/add", {
@@ -48,9 +47,11 @@ const Expense = () => {
 
       if (!response.ok) {
          setError(json.error);
+         setIsLoading(false);
          console.log(error);
       }
       if (response.ok) {
+         setIsLoading(false);
          setType("");
          setCategory("");
          setValue("");
@@ -69,12 +70,14 @@ const Expense = () => {
 
    return (
       <>
+         {isLoading && (
+            <div className="spiner">
+               <div className="circle-one"></div>
+            </div>
+         )}
          <div id="expense__container">
             <main id="expense__page" className="container">
                <div className="row position-relative">
-                  {/* Mobile Info In top */}
-                 
-                  {/* Arrow Back and Three dot and page name */}
                   <div className="col-12">
                      <div className="d-flex justify-content-around mt-5">
                         <div>
@@ -168,20 +171,13 @@ const Expense = () => {
                         <button
                            type="submit"
                            className="btn w-100 "
-
-                           // disabled={
-                           //    !selectedProcess ||
-                           //    !selected ||
-                           //    !selectedDate ||
-                           //    !expenseValue
-                           // }
+                           disabled={isLoading}
                         >
                            Add
                         </button>
                      </div>
                   </div>
                </form>
-               {/* Button Add  */}
             </main>
          </div>
       </>

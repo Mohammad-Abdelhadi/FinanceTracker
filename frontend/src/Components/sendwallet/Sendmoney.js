@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import Time from "../../Images/Time.svg";
-import Battery from "../../Images/Battery.svg";
-import ArrowBack from "../../Images/ArrowBack.svg";
-import ThreeDot from "../../Images/ThreeDot.svg";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../hooks/useAuthContext";
-import { useWalletContext } from "../../hooks/useWalletContext";
+import { Link } from "react-router-dom";
 import "./Sendmoney.css";
 import useTransferInformation from "../../hooks/useTransferInformation";
 const Sendmoney = () => {
@@ -22,6 +16,11 @@ const Sendmoney = () => {
 
    return (
       <>
+         {isLoading && (
+            <div className="spiner">
+               <div className="circle-one"></div>
+            </div>
+         )}
          <div id="expense__container">
             <main id="expense__page" className="container">
                <div className="row position-relative">
@@ -43,7 +42,9 @@ const Sendmoney = () => {
                   onSubmit={handleSubmit}
                >
                   <div className="my-3">
-                     <label htmlFor="Email" className="transfer__amount">Send to :</label>
+                     <label htmlFor="Email" className="transfer__amount">
+                        Send to :
+                     </label>
                      <input
                         id="Email"
                         type="text"
@@ -57,7 +58,9 @@ const Sendmoney = () => {
                   </div>
 
                   <div className="my-3">
-                     <label htmlFor="amount" className="transfer__amount">Transfer amount :</label>
+                     <label htmlFor="amount" className="transfer__amount">
+                        Transfer amount :
+                     </label>
                      <input
                         id="amount"
                         type="number"
@@ -82,7 +85,6 @@ const Sendmoney = () => {
                            type="submit"
                            className="btn w-100 send__btn"
                            disabled={isLoading}
-                          
                         >
                            send
                         </button>

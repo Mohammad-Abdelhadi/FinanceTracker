@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Time from "../../Images/Time.svg";
 import Battery from "../../Images/Battery.svg";
 import ArrowBack from "../../Images/ArrowBack.svg";
 import ThreeDot from "../../Images/ThreeDot.svg";
 import { Link } from "react-router-dom";
-import { useAuthContext } from "../../hooks/useAuthContext";
-import { useWalletContext } from "../../hooks/useWalletContext";
-import WalletIcon from "../../Images/WalletIcon.png";
 import { useTransferContext } from "../../hooks/useTransferContext";
 import useTransferConfirmation from "../../hooks/useTransferConfirmation";
 
 const Confirmtransfer = () => {
-   const { ConfirmationSend, isLoading, error } = useTransferConfirmation();
+   const { ConfirmationSend, isLoading } = useTransferConfirmation();
    const { transferInfo } = useTransferContext();
 
    const handleSubmit = async (e) => {
@@ -22,6 +19,11 @@ const Confirmtransfer = () => {
 
    return (
       <>
+         {isLoading && (
+            <div className="spiner">
+               <div className="circle-one"></div>
+            </div>
+         )}
          <div id="expense__container">
             <main id="expense__page" className="container">
                <div className="row position-relative">
@@ -62,14 +64,20 @@ const Confirmtransfer = () => {
                >
                   <div
                      className=" text-center"
-                     style={{ fontWeight: "500", color: "#171717" , paddingTop:"30px" }}
+                     style={{
+                        fontWeight: "500",
+                        color: "#171717",
+                        paddingTop: "30px",
+                     }}
                   >
                      {" "}
                      Transfer Confirmation
                   </div>
 
                   <div className="my-3">
-                     <label htmlFor="email" className="transfer__amount">Send to :</label>
+                     <label htmlFor="email" className="transfer__amount">
+                        Send to :
+                     </label>
                      <input
                         disabled
                         placeholder="Email user"
@@ -81,7 +89,9 @@ const Confirmtransfer = () => {
                      <div></div>
                   </div>
                   <div className="my-3">
-                     <label htmlFor="amount" className="transfer__amount">Transfer amount :</label>
+                     <label htmlFor="amount" className="transfer__amount">
+                        Transfer amount :
+                     </label>
                      <input
                         id="amount"
                         type="string"
@@ -94,7 +104,9 @@ const Confirmtransfer = () => {
                      />
                   </div>
                   <div className="my-3">
-                     <label htmlFor="amount" className="transfer__amount">Username :</label>
+                     <label htmlFor="amount" className="transfer__amount">
+                        Username :
+                     </label>
                      <input
                         id="amount"
                         type="string"

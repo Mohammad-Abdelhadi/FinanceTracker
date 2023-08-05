@@ -15,11 +15,16 @@ const Signup = () => {
    const handleSubmit = async (e) => {
       e.preventDefault();
 
-      await signup(username, email, password);
+      await signup(username, email, password, confirmPassword);
    };
 
    return (
       <>
+         {isLoading && (
+            <div className="spiner">
+               <div className="circle-one"></div>
+            </div>
+         )}
          <div className="sign-up-container">
             <div className="singup-logo">
                <img src={logo} alt="" />
@@ -30,17 +35,6 @@ const Signup = () => {
                   <h1>Sign up</h1>
                </div>
                <form className="ms-5" onSubmit={handleSubmit}>
-                  <label>Email</label>
-                  <div className="1">
-                     <input
-                        type="email"
-                        className="custom_input"
-                        placeholder=" Email address"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        required
-                     />
-                  </div>
                   <label className="signup__label">Username</label>
                   <div className="">
                      <input
@@ -49,6 +43,17 @@ const Signup = () => {
                         placeholder="User Name"
                         onChange={(e) => setUsername(e.target.value)}
                         value={username}
+                        required
+                     />
+                  </div>
+                  <label>Email</label>
+                  <div className="1">
+                     <input
+                        type="email"
+                        className="custom_input"
+                        placeholder=" Email address"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
                         required
                      />
                   </div>

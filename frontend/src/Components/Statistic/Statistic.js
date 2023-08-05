@@ -1,6 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import BlackTime from "../../Images/BlackTime.svg";
-import BlackBattery from "../../Images/BlackBattery.svg";
+import React, { useEffect } from "react";
 import ThreeDot from "../../Images/BlackThreeDot.svg";
 import Blackarrow from "../../Images/Blackarrow.svg";
 import Filter from "../../Images/Filter.svg";
@@ -8,9 +6,7 @@ import "./Statistic.css";
 import { Link } from "react-router-dom";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-// import from firebase to get data
 import Dollar from "../../Images/dollar-coin-svgrepo-com.svg";
-import { AppContext } from "../../App";
 import { useWalletContext } from "../../hooks/useWalletContext";
 
 const Statistic = () => {
@@ -23,6 +19,7 @@ const Statistic = () => {
    const topSpendingData = wallet.transactions
       .filter((transaction) => transaction.type === "expense")
       .sort((a, b) => a.value - b.value)
+      .slice(0, 4)
       .reverse();
 
    const data = {
@@ -58,18 +55,6 @@ const Statistic = () => {
    return (
       <>
          <main id="stat-container">
-            {/* Mobile Info In top  Statistic page*/}
-            {/* <div className="col-12 center__battery">
-               <div className="d-flex justify-content-between">
-                  <div>
-                     <img alt="#" src={BlackTime} />
-                  </div>
-                  <div>
-                     <img alt="#" src={BlackBattery} />
-                  </div>
-               </div>
-            </div> */}
-            {/* Arrow Back and Three dot and page Name */}
             <div className="col-12">
                <div className="d-flex justify-content-around mt-5">
                   <div>

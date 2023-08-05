@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../Images/logo.png";
-import facebook from "../../Images/facebook.png";
-import apple from "../../Images/apple.png";
-import google from "../../Images/google.png";
 import "./signin.css";
 import useLogin from "../../hooks/useLogin";
 
@@ -72,6 +69,8 @@ const Signin = () => {
                   <div className="sign_mono">
                      <h1>Sign in</h1>
                   </div>
+                     <div className="headline">Manage Your Finances: Sign In to Your Secure Financial Hub</div>
+                  <label className="email__label">Email</label>
                   <div className="signin-inputs-div">
                      <input
                         type="email"
@@ -80,6 +79,7 @@ const Signin = () => {
                         value={email}
                      />
                   </div>
+                  <label>Password</label>
                   <div>
                      <input
                         type="password"

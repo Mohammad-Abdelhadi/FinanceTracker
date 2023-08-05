@@ -26,16 +26,6 @@ const WalletEmail = () => {
             <main id="expense__page" className="container">
                <div className="row position-relative">
                   {/* Mobile Info In top */}
-                  <div className="col-12 center__battery ">
-                     <div className="d-flex justify-content-between ">
-                        <div>
-                           <img alt="#" src={Time} />
-                        </div>
-                        <div>
-                           <img alt="#" src={Battery} />
-                        </div>
-                     </div>
-                  </div>
                   {/* Arrow Back and Three dot and page name */}
                   <div className="col-12">
                      <div className="d-flex justify-content-around mt-5">
@@ -53,7 +43,7 @@ const WalletEmail = () => {
                   onSubmit={handleSubmit}
                >
                   <div className="my-3">
-                     <label htmlFor="Email">To: (Email)</label>
+                     <label htmlFor="Email" className="transfer__amount">Send to :</label>
                      <input
                         id="Email"
                         type="text"
@@ -67,7 +57,7 @@ const WalletEmail = () => {
                   </div>
 
                   <div className="my-3">
-                     <label htmlFor="amount">Amount:</label>
+                     <label htmlFor="amount" className="transfer__amount">Transfer amount :</label>
                      <input
                         id="amount"
                         type="number"
@@ -90,8 +80,9 @@ const WalletEmail = () => {
                      <div className="my-2">
                         <button
                            type="submit"
-                           className="btn w-100 "
+                           className="btn w-100 send__btn"
                            disabled={isLoading}
+                          
                         >
                            send
                         </button>

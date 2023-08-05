@@ -12,3 +12,14 @@
    margin: 0;
    font-size: 14px;
 }
+.text__edit{
+   font-size: 18px;
+}
+.transfer__amount{
+   margin-right: 0;
+   margin-bottom: 0;
+   margin-top: 1rem;
+}
+.send__btn a:hover{
+ color:#fff
+}

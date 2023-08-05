@@ -27,7 +27,7 @@ const SuccessfulyWallet = () => {
             </div>
             <div>
                <p className="SuccessfulyWallet__amount">
-                  {transferInfo.value}$
+                 $ {transferInfo.value}
                </p>
             </div>
 

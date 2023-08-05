@@ -18,17 +18,25 @@
   margin-top: 0.3rem;
 }
 .sign_mono {
-  padding-right: 42%;
-  margin-bottom: 5%;
+  padding-right: 58%;
+  margin-bottom: 1%;
 }
 
 .input {
   margin-top: 12%;
-}
 
+}
+label{
+  margin-right: 59%;
+  margin-bottom: 0.7rem;
+}
+.email__label{
+  margin-right: 67%;
+  margin-top: 2rem;
+}
 .input div input {
   background-color: #f2f9ff;
-  color: #65b2fa;
+  color: #222222;
   padding: 6%;
   width: 17rem;
   margin-bottom: 5%;
@@ -39,8 +47,8 @@
   outline: none;
 }
 
-::placeholder {
-  color: #65b2fa;
+.input ::placeholder {
+  color: #393939; /* Change to the color you want */
 }
 
 .forgot_pas {
@@ -58,7 +66,8 @@
   font-size: 14px;
   display: flex;
   align-items: start;
-  margin-left: 9.5rem;
+  margin-left:5.8rem;
+  margin-top:0.5rem;
 }
 .error__container{
   width: 100%;
@@ -68,8 +77,8 @@
   place-items: center;
 }
 .have-account {
-  margin-left: 17%;
-  font-size: 12px;
+  margin-left:50%;
+  font-size: 14px;
 }
 
 .have-account a {
@@ -86,7 +95,7 @@
 }
 
 .btn_sign_in {
-  width: 63%;
+  width: 70%;
   height: 3.5rem;
   background: linear-gradient(180deg, #5daefa -17.19%, #0071d9 123.44%);
   box-shadow: 0px 4px 20px #6bb7ff;
@@ -94,7 +103,7 @@
   place-items: center;
   border-radius: 40px;
   color: #fff;
-  margin: 1rem 0 3rem 4.8rem;
+  margin: 1rem 0 1rem 4.3rem;
   border: none;
 }
 
@@ -113,10 +122,15 @@
   margin-top: 0.5rem;
   margin-left: 4.6rem;
 }
+.headline{
+  font-size: 12px;
+  width: 70%;
+  margin-right:8%;
+}
 @media (min-width: 375px) and (max-width: 424px) {
   .btn_sign_in {
     margin-left: 17.5%;
-    width: 245px;
+    width: 270px;
   }
   .btn_sign_in a {
     text-decoration: none;
@@ -126,7 +140,7 @@
   }
 
   .input div input {
-    width: 15rem;
+    width: 20rem;
   }
   .sign_mono {
     margin-left: 0.7rem;
@@ -137,8 +151,8 @@
   }
 
   .have-account {
-    margin-left: -6%;
-    font-size: 10px;
+    margin-left: 20%;
+    font-size: 12px;
   }
   .signin-continue_with {
     margin-left: 32%;

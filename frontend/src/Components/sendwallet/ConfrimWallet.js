@@ -46,7 +46,7 @@ const ConfirmWallet = () => {
                         </div>
                         <div>
                            <Link className="text__edit" to="#">
-                              Send Wallet
+                              Send Money
                            </Link>
                         </div>
                         <div>
@@ -61,15 +61,15 @@ const ConfirmWallet = () => {
                   onSubmit={handleSubmit}
                >
                   <div
-                     className="py-3 text-center"
-                     style={{ fontWeight: "bold", color: "#298ce7" }}
+                     className=" text-center"
+                     style={{ fontWeight: "500", color: "#171717" , paddingTop:"30px" }}
                   >
                      {" "}
                      Transfer Confirmation
                   </div>
 
                   <div className="my-3">
-                     <label htmlFor="email">To</label>
+                     <label htmlFor="email" className="transfer__amount">Send to :</label>
                      <input
                         disabled
                         placeholder="Email user"
@@ -81,7 +81,7 @@ const ConfirmWallet = () => {
                      <div></div>
                   </div>
                   <div className="my-3">
-                     <label htmlFor="amount">Amount:</label>
+                     <label htmlFor="amount" className="transfer__amount">Transfer amount :</label>
                      <input
                         id="amount"
                         type="string"
@@ -94,12 +94,12 @@ const ConfirmWallet = () => {
                      />
                   </div>
                   <div className="my-3">
-                     <label htmlFor="amount">User name:</label>
+                     <label htmlFor="amount" className="transfer__amount">Username :</label>
                      <input
                         id="amount"
                         type="string"
                         placeholder="0$"
-                        className={`form-control mt-2 `}
+                        className={`form-control mt-2 mb-5 `}
                         aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-default"
                         value={`${transferInfo.username}`}

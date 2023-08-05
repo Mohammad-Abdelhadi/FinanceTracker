@@ -37,10 +37,7 @@ const UserProfile = () => {
             }}
          >
             <div>
-               <div className="user__profile__container__charge">
-                  <p>9:41</p>
-                  <img src={charge} alt="" />
-               </div>
+               
 
                <div className="user__profile__container__name">
                   <div>

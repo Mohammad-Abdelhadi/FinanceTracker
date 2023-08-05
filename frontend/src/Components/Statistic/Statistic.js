@@ -59,7 +59,7 @@ const Statistic = () => {
       <>
          <main id="stat-container">
             {/* Mobile Info In top  Statistic page*/}
-            <div className="col-12 center__battery">
+            {/* <div className="col-12 center__battery">
                <div className="d-flex justify-content-between">
                   <div>
                      <img alt="#" src={BlackTime} />
@@ -68,7 +68,7 @@ const Statistic = () => {
                      <img alt="#" src={BlackBattery} />
                   </div>
                </div>
-            </div>
+            </div> */}
             {/* Arrow Back and Three dot and page Name */}
             <div className="col-12">
                <div className="d-flex justify-content-around mt-5">
@@ -149,7 +149,7 @@ const Statistic = () => {
                            </div>
                            <div>
                               <h6>{transaction.category}</h6>
-                              <h6>{transaction.value}</h6>
+                              <h6>${transaction.value}</h6>
                            </div>
                         </div>
                         <div>

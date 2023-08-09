@@ -5,7 +5,7 @@ Introducing our Personal Finance Tracker app
 #####
 #signup-signin - you can register new account , then log in.
 ##
-Home - view the income and out come
+Home - view balance and income out come 
 ##
 expense - add expensee that let you to add income or outcome
 ##

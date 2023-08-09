@@ -11,6 +11,6 @@ expense - add expensee that let you to add income or outcome
 ##
 statics - visualize the top 3 expense as charts 
 ##
-send money - Let you send money to another users have registered in the website
+send money - Let you send money to another users have registered in the app
 ##
 profile - preview the user Data 

@@ -256,6 +256,4 @@ This documentation provides details on the endpoints for the Finance Tracker API
 ![Profile](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/84f60bc1-a58a-40d9-8efa-2d6ec02c7709)
 
 
-Please replace `<your_generated_token>` with the actual token value. Adjust the success and failure responses based on your actual implementation.
-```bash
-    ```
+

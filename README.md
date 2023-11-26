@@ -4,6 +4,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
 
 ## User
 
+## Sign up
 ![signup](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/92fa29a5-5703-4493-b77b-9a340cbeb458)
 
 - **Endpoint:** `POST /api/user/signup`
@@ -42,6 +43,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       ```
 
 ### Login
+![signin](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/f0ae9383-e00b-4f83-810b-5a56498b2a71)
 
 - **Endpoint:** `POST /api/user/login`
 - **Authorization:** None
@@ -76,6 +78,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
 ## Wallet
 
 ### Get Wallet
+![Home](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/747ad49c-a22c-472b-9e8e-0429e842e26c)
 
 - **Endpoint:** `GET /api/wallet/`
 - **Authorization:** Bearer Token
@@ -103,6 +106,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       ```
 
 ### Add Transaction
+![Add Expense](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/cf1ec478-cd7b-45e3-bf9e-8d333e6a5ef5)
 
 - **Endpoint:** `POST /api/wallet/add`
 - **Authorization:** Bearer Token
@@ -191,6 +195,39 @@ This documentation provides details on the endpoints for the Finance Tracker API
           "toWallet": {
               // details of recipient's wallet after the transaction
           }
+      }
+      ```
+    - Failure:
+      ```json
+      {
+          "error": "Error message here"
+      }
+      ```
+
+### Tranfer To Information
+
+- **Endpoint:** `POST /api/wallet/tranferToInformation`
+- **Authorization:** Bearer Token
+- **Request:**
+    ```json
+    {
+        "emailTo": "m@mail.com",
+        "value": 100
+    }
+    ```
+- **cURL Example:**
+    ```bash
+    curl --location 'http://localhost:8080/api/wallet/tranferToInformation' \
+    --data-raw '{"emailTo": "m@mail.com", "value": 100}'
+    ```
+- **Response:**
+    - Success:
+      ```json
+      {
+          "toId": "recipient_user_id",
+          "username": "recipient_username",
+          "email": "m@mail.com",
+          "value": 100
       }
       ```
     - Failure:

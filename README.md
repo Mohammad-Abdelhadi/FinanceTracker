@@ -2,91 +2,67 @@
 
 This documentation provides details on the endpoints for the Finance Tracker API.
 
-## Add Transaction
+## User
 
-- **Endpoint:** `POST /api/wallet/add`
+### Sign Up
+
+- **Endpoint:** `POST /api/user/signup`
+- **Example Request:**
+    ```json
+    {
+        "username": "mohamamd",
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }
+    ```
+- **Example cURL Request:**
+    ```bash
+    curl --location 'http://localhost:8080/api/user/signup' \
+    --data-raw '{
+        "username": "mohamamd",
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }'
+    ```
+
+### Login
+
+- **Endpoint:** `POST /api/user/login`
+- **Example Request:**
+    ```json
+    {
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }
+    ```
+- **Example cURL Request:**
+    ```bash
+    curl --location 'http://localhost:8080/api/user/login' \
+    --data-raw '{
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }'
+    ```
+
+## Wallet
+
+### Get Wallet
+
+- **Endpoint:** `GET /api/wallet/`
 - **Authorization:** Bearer Token
 - **Example Request:**
-    ```json
-    /*
-    {
-      "type": "expense",
-      "category": "education",
-      "value": 500,
-      "date": "2023-11-26"
-      And Remember The Barer token.
-    }
-    */
-    {
-      "type": "income",
-      "category": "salary",
-      "value": 500,
-      "date": "2023-11-26"
-    }
-    ```
-- **Example cURL Request:**
     ```bash
-    curl --location 'https://backendfinancetracker.onrender.com/api/wallet/add' \
-    --data '/*
-    {
-      "type": "expense",
-      "category": "education",
-      "value": 500,
-      "date": "2023-11-26"
-      And Remember The Barer token.
-    }
-    */
-    {
-      "type": "income",
-      "category": "salary",
-      "value": 500,
-      "date": "2023-11-26"
-    }'
+    curl --location 'http://localhost:8080/api/wallet/' \
+    --data ''
     ```
 
-## Transfer to Information
+### Get Wallet (Remote)
 
-- **Endpoint:** `POST /api/wallet/tranferToInformation`
+- **Endpoint:** `GET /api/wallet/`
 - **Authorization:** Bearer Token
 - **Example Request:**
-    ```json
-    {
-      "emailTo": "m@mail.com",
-      "value": 100
-    }
-    ```
-- **Example cURL Request:**
     ```bash
-    curl --location 'https://backendfinancetracker.onrender.com/api/wallet/tranferToInformation' \
-    --data-raw '{
-      "emailTo": "m@mail.com",
-      "value": 100
-    }'
+    curl --location 'https://backendfinancetracker.onrender.com/api/wallet/'
     ```
 
-## Confirm Transfer Money
-
-- **Endpoint:** `POST /api/wallet/confirmTrasferMoney`
-- **Example Request:**
-    ```json
-    {
-      "_id": "sender_user_id",
-      "toId": "recipient_user_id",
-      "username": "recipient_username",
-      "email": "recipient_email@example.com",
-      "value": 100
-    }
-    ```
-- **Example cURL Request:**
-    ```bash
-    curl --location 'https://backendfinancetracker.onrender.com/api/wallet/confirmTrasferMoney' \
-    --data-raw '{
-      "_id": "sender_user_id",
-      "toId": "recipient_user_id",
-      "username": "recipient_username",
-      "email": "recipient_email@example.com",
-      "value": 100
-    }'
-    ```
-
-Feel free to customize this template further by adding more information about your API, such as an introduction, prerequisites, and any additional details you think are relevant. Make sure to replace placeholder URLs and tokens with actual values.
+Feel free to adapt this template further based on your specific requirements. Include any additional information about your API, such as an introduction, prerequisites, and any other details that you think are relevant. Make sure to replace placeholder URLs and tokens with actual values.

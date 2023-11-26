@@ -96,7 +96,11 @@ With a user-friendly registration form that includes validation, managing your f
 - **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/user/login' \
-    --data-raw '{"email":"moh@mail.com","password":"aA12345678#"}'
+    --data-raw
+    '{
+    "email":"moh@mail.com",
+    "password":"aA12345678#"
+    }'
     ```
 - **Response:**
     - Success:
@@ -223,7 +227,11 @@ With a user-friendly registration form that includes validation, managing your f
 - **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/wallet/tranferToInformation' \
-    --data-raw '{"emailTo": "m@mail.com", "value": 100}'
+    --data-raw
+    '{"
+    emailTo": "m@mail.com",
+     "value": 100
+    }'
     ```
 - **Response:**
     - Success:
@@ -260,7 +268,14 @@ With a user-friendly registration form that includes validation, managing your f
 - **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/wallet/confirmTrasferMoney' \
-    --data-raw '{"_id": "sender_user_id","toId": "recipient_user_id","username": "recipient_username","email": "recipient_email@example.com","value": 100}'
+    --data-raw
+    '{
+    "_id": "sender_user_id",
+    "toId": "recipient_user_id",
+    "username": "recipient_username",
+    "email": "recipient_email@example.com",
+    "value": 100
+    }'
     ```
 - **Response:**
     - Success:

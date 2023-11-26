@@ -6,6 +6,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
 
 ### Sign Up
 
+<img src="images/signup.png">
 - **Endpoint:** `POST /api/user/signup`
 - **Authorization:** None
 - **Request:**

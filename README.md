@@ -4,7 +4,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
 
 ## User
 
-## Sign up
+Sign up
 ![signup](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/92fa29a5-5703-4493-b77b-9a340cbeb458)
 
 - **Endpoint:** `POST /api/user/signup`
@@ -166,6 +166,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       }
       ```
 ### Tranfer To Information
+![Send Wallet Validation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/bf99af38-d36d-46e2-a8c9-718484fe3602)
 
 - **Endpoint:** `POST /api/wallet/tranferToInformation`
 - **Authorization:** Bearer Token
@@ -199,6 +200,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       ```
       
 ### Confirm Transfer Money
+![Send Wallet Confirmation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/78d0e112-aa26-4200-8815-f90ba60fe4c9)
 
 - **Endpoint:** `POST /api/wallet/confirmTrasferMoney`
 - **Authorization:** Bearer Token
@@ -235,6 +237,11 @@ This documentation provides details on the endpoints for the Finance Tracker API
           "error": "Error message here"
       }
       ```
+### Send Money Successffuly
+![Send Wallet Successffuly](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/1973dffe-fbe5-4796-9a8d-9f3c00bf74fa)
+
+### Profile
+![Profile](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/84f60bc1-a58a-40d9-8efa-2d6ec02c7709)
 
 
 Please replace `<your_generated_token>` with the actual token value. Adjust the success and failure responses based on your actual implementation.

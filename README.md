@@ -4,9 +4,8 @@ This documentation provides details on the endpoints for the Finance Tracker API
 
 ## User
 
-### Sign Up
+![Sign Up](images/signup.png)
 
-<img src="images/signup.png">
 - **Endpoint:** `POST /api/user/signup`
 - **Authorization:** None
 - **Request:**

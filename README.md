@@ -165,7 +165,39 @@ This documentation provides details on the endpoints for the Finance Tracker API
           "error": "Error message here"
       }
       ```
+### Tranfer To Information
 
+- **Endpoint:** `POST /api/wallet/tranferToInformation`
+- **Authorization:** Bearer Token
+- **Request:**
+    ```json
+    {
+        "emailTo": "m@mail.com",
+        "value": 100
+    }
+    ```
+- **cURL Example:**
+    ```bash
+    curl --location 'http://localhost:8080/api/wallet/tranferToInformation' \
+    --data-raw '{"emailTo": "m@mail.com", "value": 100}'
+    ```
+- **Response:**
+    - Success:
+      ```json
+      {
+          "toId": "recipient_user_id",
+          "username": "recipient_username",
+          "email": "m@mail.com",
+          "value": 100
+      }
+      ```
+    - Failure:
+      ```json
+      {
+          "error": "Error message here"
+      }
+      ```
+      
 ### Confirm Transfer Money
 
 - **Endpoint:** `POST /api/wallet/confirmTrasferMoney`
@@ -204,38 +236,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       }
       ```
 
-### Tranfer To Information
 
-- **Endpoint:** `POST /api/wallet/tranferToInformation`
-- **Authorization:** Bearer Token
-- **Request:**
-    ```json
-    {
-        "emailTo": "m@mail.com",
-        "value": 100
-    }
-    ```
-- **cURL Example:**
-    ```bash
-    curl --location 'http://localhost:8080/api/wallet/tranferToInformation' \
-    --data-raw '{"emailTo": "m@mail.com", "value": 100}'
-    ```
-- **Response:**
-    - Success:
-      ```json
-      {
-          "toId": "recipient_user_id",
-          "username": "recipient_username",
-          "email": "m@mail.com",
-          "value": 100
-      }
-      ```
-    - Failure:
-      ```json
-      {
-          "error": "Error message here"
-      }
-      ```
 Please replace `<your_generated_token>` with the actual token value. Adjust the success and failure responses based on your actual implementation.
 ```bash
     ```

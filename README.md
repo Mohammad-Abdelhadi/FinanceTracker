@@ -29,7 +29,7 @@ With a user-friendly registration form that includes validation, managing your f
 ### Charts
 ![Charts](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/53eb211c-0dcf-40c4-8dfe-e32a6bbbbb3b)
 
-### Transfer To Information
+### Send Money
 ![Send Wallet Validation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/bf99af38-d36d-46e2-a8c9-718484fe3602)
 
 ### Confirm Transfer Money

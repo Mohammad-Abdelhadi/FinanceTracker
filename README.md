@@ -7,7 +7,8 @@ This documentation provides details on the endpoints for the Finance Tracker API
 ### Sign Up
 
 - **Endpoint:** `POST /api/user/signup`
-- **Example Request:**
+- **Authorization:** None
+- **Request:**
     ```json
     {
         "username": "mohamamd",
@@ -15,34 +16,32 @@ This documentation provides details on the endpoints for the Finance Tracker API
         "password": "aA12345678#"
     }
     ```
-- **Example cURL Request:**
+- **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/user/signup' \
-    --data-raw '{
-        "username": "mohamamd",
-        "email": "moh@mail.com",
-        "password": "aA12345678#"
-    }'
+    --data-raw '{"username":"mohamamd","email":"moh@mail.com","password":"aA12345678#"}'
     ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
 
 ### Login
 
 - **Endpoint:** `POST /api/user/login`
-- **Example Request:**
+- **Authorization:** None
+- **Request:**
     ```json
     {
         "email": "moh@mail.com",
         "password": "aA12345678#"
     }
     ```
-- **Example cURL Request:**
+- **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/user/login' \
-    --data-raw '{
-        "email": "moh@mail.com",
-        "password": "aA12345678#"
-    }'
+    --data-raw '{"email":"moh@mail.com","password":"aA12345678#"}'
     ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
 
 ## Wallet
 
@@ -50,19 +49,114 @@ This documentation provides details on the endpoints for the Finance Tracker API
 
 - **Endpoint:** `GET /api/wallet/`
 - **Authorization:** Bearer Token
-- **Example Request:**
+- **cURL Example:**
     ```bash
-    curl --location 'http://localhost:8080/api/wallet/' \
-    --data ''
+    curl --location 'http://localhost:8080/api/wallet/' --data ''
     ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
 
-### Get Wallet (Remote)
+### Add Transaction
 
-- **Endpoint:** `GET /api/wallet/`
+- **Endpoint:** `POST /api/wallet/add`
 - **Authorization:** Bearer Token
-- **Example Request:**
-    ```bash
-    curl --location 'https://backendfinancetracker.onrender.com/api/wallet/'
+- **Request:**
+    ```json
+    /*
+    {
+        "type": "expense",
+        "category": "education",
+        "value": 500,
+        "date": "2023-11-26"
+        And Remember The Barer token.
+    }
+    */
+    {
+        "type": "income",
+        "category": "salary",
+        "value": 500,
+        "date": "2023-11-26"
+    }
     ```
+- **cURL Example:**
+    ```bash
+    curl --location 'http://localhost:8080/api/wallet/add' \
+    --data '/*
+    {
+        "type": "expense",
+        "category": "education",
+        "value": 500,
+        "date": "2023-11-26"
+        And Remember The Barer token.
+    }
+    */
+    {
+        "type": "income",
+        "category": "salary",
+        "value": 500,
+        "date": "2023-11-26"
+    }'
+    ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
 
-Feel free to adapt this template further based on your specific requirements. Include any additional information about your API, such as an introduction, prerequisites, and any other details that you think are relevant. Make sure to replace placeholder URLs and tokens with actual values.
+### Confirm Transfer Money
+
+- **Endpoint:** `POST /api/wallet/confirmTrasferMoney`
+- **Authorization:** Bearer Token
+- **Request:**
+    ```json
+    {
+        "_id": "sender_user_id",
+        "toId": "recipient_user_id",
+        "username": "recipient_username",
+        "email": "recipient_email@example.com",
+        "value": 100
+    }
+    ```
+- **cURL Example:**
+    ```bash
+    curl --location 'http://localhost:8080/api/wallet/confirmTrasferMoney' \
+    --data-raw '{"_id": "sender_user_id","toId": "recipient_user_id","username": "recipient_username","email": "recipient_email@example.com","value": 100}'
+    ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
+
+---
+
+## Remote Server Endpoints
+
+### User Sign Up
+
+- **Endpoint:** `POST https://backendfinancetracker.onrender.com/api/user/signup`
+- **Authorization:** None
+- **Request:**
+    ```json
+    {
+        "username": "mohamamd",
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }
+    ```
+- **cURL Example:**
+    ```bash
+    curl --location 'https://backendfinancetracker.onrender.com/api/user/signup' \
+    --data-raw '{"username":"mohamamd","email":"moh@mail.com","password":"aA12345678#"}'
+    ```
+- **Response:**
+    - No response body (This request doesn't return any response body)
+
+### User Login
+
+- **Endpoint:** `POST https://backendfinancetracker.onrender.com/api/user/login`
+- **Authorization:** None
+- **Request:**
+    ```json
+    {
+        "email": "moh@mail.com",
+        "password": "aA12345678#"
+    }
+    ```
+- **cURL Example:**
+    ```bash
+    curl --location 'https

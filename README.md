@@ -2,16 +2,39 @@
 
 This documentation provides details on the endpoints for the Finance Tracker API.
 
+## Screenshots
+
 ### Splash Screen
 ![SplashScreen](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/576ab5fa-9e2f-4059-9038-9fb9078c2962)
 
-### OnBoarding
-![onboarding](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/5667881f-d88c-40c5-8cd8-2d5e98d6b72a)
+### Onboarding
+![Onboarding](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/5667881f-d88c-40c5-8cd8-2d5e98d6b72a)
+
+### Home
+![Home](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/747ad49c-a22c-472b-9e8e-0429e842e26c)
+
+### Add Transaction
+![Add Expense](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/cf1ec478-cd7b-45e3-bf9e-8d333e6a5ef5)
+
+### Charts
+![Charts](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/53eb211c-0dcf-40c4-8dfe-e32a6bbbbb3b)
+
+### Transfer To Information
+![Send Wallet Validation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/bf99af38-d36d-46e2-a8c9-718484fe3602)
+
+### Confirm Transfer Money
+![Send Wallet Confirmation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/78d0e112-aa26-4200-8815-f90ba60fe4c9)
+
+### Send Money Successfully
+![Send Wallet Successfully](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/1973dffe-fbe5-4796-9a8d-9f3c00bf74fa)
+
+### Profile
+![Profile](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/84f60bc1-a58a-40d9-8efa-2d6ec02c7709)
 
 ## User
 
 ### Sign up
-![signup](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/92fa29a5-5703-4493-b77b-9a340cbeb458)
+![Signup](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/92fa29a5-5703-4493-b77b-9a340cbeb458)
 
 - **Endpoint:** `POST /api/user/signup`
 - **Authorization:** None
@@ -49,7 +72,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
       ```
 
 ### Login
-![signin](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/f0ae9383-e00b-4f83-810b-5a56498b2a71)
+![Signin](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/f0ae9383-e00b-4f83-810b-5a56498b2a71)
 
 - **Endpoint:** `POST /api/user/login`
 - **Authorization:** None
@@ -172,12 +195,10 @@ This documentation provides details on the endpoints for the Finance Tracker API
       }
       ```
 
-
- ### Charts -> Visualaize The Expense As charts
+### Charts
 ![Charts](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/53eb211c-0dcf-40c4-8dfe-e32a6bbbbb3b)
 
-
-### Tranfer To Information
+### Transfer To Information
 ![Send Wallet Validation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/bf99af38-d36d-46e2-a8c9-718484fe3602)
 
 - **Endpoint:** `POST /api/wallet/tranferToInformation`
@@ -210,7 +231,7 @@ This documentation provides details on the endpoints for the Finance Tracker API
           "error": "Error message here"
       }
       ```
-      
+
 ### Confirm Transfer Money
 ![Send Wallet Confirmation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/78d0e112-aa26-4200-8815-f90ba60fe4c9)
 
@@ -249,11 +270,9 @@ This documentation provides details on the endpoints for the Finance Tracker API
           "error": "Error message here"
       }
       ```
-### Send Money Successffuly
-![Send Wallet Successffuly](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/1973dffe-fbe5-4796-9a8d-9f3c00bf74fa)
+
+### Send Money Successfully
+![Send Wallet Successfully](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/1973dffe-fbe5-4796-9a8d-9f3c00bf74fa)
 
 ### Profile
 ![Profile](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/84f60bc1-a58a-40d9-8efa-2d6ec02c7709)
-
-
-

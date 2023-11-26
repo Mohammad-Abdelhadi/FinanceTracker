@@ -19,7 +19,11 @@ This documentation provides details on the endpoints for the Finance Tracker API
 - **cURL Example:**
     ```bash
     curl --location 'http://localhost:8080/api/user/signup' \
-    --data-raw '{"username":"mohamamd","email":"moh@mail.com","password":"aA12345678#"}'
+    --data-raw '{
+    "username":"mohamamd",
+    "email":"moh@mail.com",
+    "password":"aA12345678#"
+    }'
     ```
 - **Response:**
     - Success:

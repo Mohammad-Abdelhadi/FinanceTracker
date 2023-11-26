@@ -2,6 +2,12 @@
 
 This documentation provides details on the endpoints for the Finance Tracker API.
 
+### Splash Screen
+![SplashScreen](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/576ab5fa-9e2f-4059-9038-9fb9078c2962)
+
+### OnBoarding
+![onboarding](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/5667881f-d88c-40c5-8cd8-2d5e98d6b72a)
+
 ## User
 
 Sign up
@@ -165,6 +171,12 @@ Sign up
           "error": "Error message here"
       }
       ```
+
+
+ ### Charts -> Visualaize The Expense As charts
+![Charts](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/53eb211c-0dcf-40c4-8dfe-e32a6bbbbb3b)
+
+
 ### Tranfer To Information
 ![Send Wallet Validation](https://github.com/Mohammad-Abdelhadi/FinanceTracker/assets/125509690/bf99af38-d36d-46e2-a8c9-718484fe3602)
 
